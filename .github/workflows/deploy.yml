@@ -36,20 +36,36 @@ jobs:
           coverage/lcov/lcov.info
           coverage/cobertura.xml
 
-  deploy:
+  build:
     needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 16.x
+    - name: Install Dependencies
+      run: npm install
+    - name: Build
+      run: npm run build
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-output
+        path: ./build
+
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - name: Download Build Artifacts
+      uses: actions/download-artifact@v2
       with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install Packages
-      run: npm install
-    - name: Build page
-      run: npm run build
+        name: build-output
+        path: ./build
     - name: Deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
       with:
