@@ -1,0 +1,184 @@
+<!--
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="logo">
+        <img src="https://placehold.co/32x32" alt="Visual Framework Logo" />
+        <span>Visual Framework</span>
+      </div>
+      <p class="description">
+        A design system for creating consistent, accessible, and beautiful life science websites.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <div class="link-group">
+        <h3>Resources</h3>
+        <ul>
+          <li *ngFor="let link of footerLinks.resources">
+            <a [routerLink]="link.url">{{link.name}}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="link-group">
+        <h3>Community</h3>
+        <ul>
+          <li *ngFor="let link of footerLinks.community">
+            <a [href]="link.url" target="_blank" rel="noopener noreferrer">{{link.name}}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="link-group">
+        <h3>Support</h3>
+        <ul>
+          <li *ngFor="let link of footerLinks.support">
+            <a [routerLink]="link.url">{{link.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {{currentYear}} Visual Framework. All rights reserved.</p>
+    <div class="legal-links">
+      <a routerLink="/privacy">Privacy Policy</a>
+      <a routerLink="/terms">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+-->
+
+    <footer class="vf-footer | vf-search-client-side--no-index">
+  <div class="vf-footer__inner">
+    <p class="vf-footer__notice">The Visual Framework is a toolkit to quickly and collaboratively build better life science websites.</p>
+    <p class="vf-footer__notice">It is open source and used on dozens of life science websites and maintained by a community of front end developers, UX specialists and designers. <a class="vf-footer__link" href="https://stable.visual-framework.dev/guidance/discussing-the-vf">Get involved</a>.</p>
+    <div class="vf-footer__links-group | vf-grid vf-grid__col-5">
+      <div class="vf-links">
+        <ul class="vf-links__list | vf-list">
+          <h4 class="vf-links__heading">
+            <a class="vf-heading__link" href="https://stable.visual-framework.dev/about">About</a>
+          </h4>
+          <li class="vf-list__item">
+            <a class="vf-list__link" href="https://stable.visual-framework.dev/about/faq">FAQ</a>
+          </li>
+          <li class="vf-list__item">
+            <a class="vf-list__link" href="https://stable.visual-framework.dev/about/roadmap">Roadmap</a>
+          </li>
+          <li class="vf-list__item">
+            <a class="vf-list__link" href="https://stable.visual-framework.dev/about/consultation">Consultation process</a>
+          </li>
+          <li class="vf-list__item">
+            <a class="vf-list__link" href="https://stable.visual-framework.dev/updates">Updates and blog</a>
+          </li>
+        </ul>
+      </div>
+      <div class="vf-links">
+        <ul class="vf-links__list | vf-list">
+          <h4 class="vf-links__heading">
+            <a class="vf-heading__link" href="https://stable.visual-framework.dev/building">Building</a>
+          </h4>
+          <li class="vf-list__item">
+            <a class="vf-list__link" href="https://stable.visual-framework.dev/components">Component list</a>
+          </li>
+          <li class="vf-list__item">
+            <a class="vf-list__link" href="https://stable.visual-framework.dev/patterns">Patterns and examples</a>
+          </li>
+          <li class="vf-list__item">
+            <a class="vf-list__link" href="https://stable.visual-framework.dev/guidance">Guidance and principles</a>
+          </li>
+          <li class="vf-list__item">
+            <a class="vf-list__link" href="https://stable.visual-framework.dev/troubleshooting">Troubleshooting</a>
+          </li>
+        </ul>
+      </div>
+      <div class="vf-links">
+        <h4 class="vf-links__heading">
+          <a class="vf-heading__link" href="https://stable.visual-framework.dev/developing">Developing</a>
+        </h4>
+        <ul class="vf-links__list | vf-list">
+          <li class="vf-list__item">
+            <a class="vf-list__link" href="https://stable.visual-framework.dev/developing/getting-started/setting-up">Setting up</a>
+          </li>
+          <li class="vf-list__item">
+            <a class="vf-list__link" href="https://stable.visual-framework.dev/developing/getting-started/code-of-conduct">Code of conduct</a>
+          </li>
+          <li class="vf-list__item">
+            <a class="vf-list__link" href="https://stable.visual-framework.dev/developing/getting-started/pull-requests">Making a Pull Request</a>
+          </li>
+        </ul>
+      </div>
+      <div class="vf-links">
+        <h4 class="vf-links__heading">
+          <a class="vf-heading__link" href="https://github.com/visual-framework/vf-core">Project</a>
+        </h4>
+        <ul class="vf-links__list | vf-list">
+          <li class="vf-list__item">
+            <a class="vf-list__link" href="https://stable.visual-framework.dev/search">Search</a>
+          </li>
+          <li class="vf-list__item">
+            <a class="vf-list__link" href="https://stable.visual-framework.dev/updates">Changelog, updates</a>
+          </li>
+          <li class="vf-list__item">
+            <a class="vf-list__link" href="https://github.com/visual-framework/vf-core">GitHub</a>
+          </li>
+          <li class="vf-list__item">
+            <a class="vf-list__link" href="https://join.slack.com/t/visual-framework/shared_invite/enQtNDAxNzY0NDg4NTY0LWFhMjEwNGY3ZTk3NWYxNWVjOWQ1ZWE4YjViZmY1YjBkMDQxMTNlNjQ0N2ZiMTQ1ZTZiMGM4NjU5Y2E0MjM3ZGQ">Slack</a>
+          </li>
+        </ul>
+      </div>
+      <div class="vf-links">
+      </div>
+      <div class="vf-links">
+      </div>
+    </div>
+    <section class="vf-footer__legal | vf-grid vf-grid__col-1">
+      <span class="vf-footer__legal-text">
+        <a class="vf-footer__link" href="https://www.embl.org/">Brought to you by the developers, designers and UX teams at EMBL and EMBL-EBI</a>
+      </span>
+      <span class="vf-footer__legal-text">
+        <a class="vf-footer__link" href="https://goo.gl/maps/nbxNg2HGXL1MTtzt9">Meyerhofstraße 1, 69117 Heidelberg, Germany</a>
+      </span>
+      <span class="vf-footer__legal-text">
+        <a class="vf-footer__link" href="tel:004962213870">Tel: +49 6221 387-0</a>
+      </span>
+      
+    </section>
+    <section class="vf-footer__legal">
+      <span class="vf-footer__legal-text">
+        Latest release: <code class="">v2.5.21</code> <a href="https://stable.visual-framework.dev/updates" class="vf-footer__link">See more releases</a>
+      </span>
+      <span class="vf-footer__legal-text">
+        <a class="vf-footer__link" href="https://stable.visual-framework.dev/feed.xml">RSS Feed</a>
+      </span>
+      <span class="vf-footer__legal-text">
+        Code license is <a class="vf-footer__link" href="https://github.com/visual-framework/vf-core/blob/develop/LICENSE">Apache 2.0</a>
+      </span>
+    </section>
+  </div>
+</footer>
+
+
+
+
+<div class="vf-grid">
+  <div class="vf-body--text">
+    <p><code class="vf-code-example__pre"> ⚠️ You're running the development command; Page location ./src/site/index.njk </code></p>
+  </div>
+</div>
+
+
+<!-- IE11 polyfill JS -->
+<script nomodule crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=default"></script>
+
+<!-- This page was generated on 2025-03-09T19:33:26.256+00:00 -->
+<script src="/scripts/scripts.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N5ZLH2KNJP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N5ZLH2KNJP');
+</script>

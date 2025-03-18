@@ -1,0 +1,38 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Common utility classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Common animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@import '../node_modules/@visual-framework/vf-sass-config/index.scss';
+@import '../node_modules/@visual-framework/vf-banner/vf-banner.scss';
+@import '../node_modules/@visual-framework/vf-banner/vf-banner--alerts.scss';
+@import '../node_modules/@visual-framework/vf-banner/vf-banner--fixed.scss';
+@import '../node_modules/@visual-framework/vf-banner/vf-banner--gdpr.scss';
+@import "../node_modules/@visual-framework/vf-box/vf-box.scss";
+@import '../node_modules/@visual-framework/vf-button/vf-button.scss';
+@import '../node_modules/@visual-framework/vf-grid/vf-grid.scss';
+@import '../node_modules/@visual-framework/vf-stack/vf-stack.scss';
+@import '../node_modules/@visual-framework/vf-u-fullbleed/vf-u-fullbleed.scss';
+
+@import "../node_modules/@visual-framework/vf-back-to-top/vf-back-to-top.scss";
+@import "../node_modules/@visual-framework/vf-mega-menu/vf-mega-menu.scss";
