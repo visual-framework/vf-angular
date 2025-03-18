@@ -1,0 +1,503 @@
+<!-- <header class="header">
+  <div class="logo">
+    <img src="https://placehold.co/32x32" alt="Visual Framework Logo" />
+    <span>Visual Framework</span>
+  </div>
+  <nav>
+    <ul>
+      <li *ngFor="let item of navItems">
+        <a (click)="item.label === 'Components' ? toggleNavigation() : null">
+          {{item.label}}
+          <span *ngIf="item.hasDropdown" class="dropdown-arrow">▼</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+Conditionally display the NavigationComponent 
+<app-navigation *ngIf="isNavVisible"></app-navigation>-->
+
+<header class="vf-global-header vf-mega-menu" data-vf-js-mega-menu role="menubar">
+
+  <a href="/"
+class="vf-logo | vf-logo--has-text">
+    <img class="vf-logo__image" src="https://stable.visual-framework.dev/assets/vf-logo/assets/logo.svg" alt="Visual Framework" loading="eager">
+    <span class="vf-logo__text">Visual Framework</span>
+  </a>
+
+  <nav class="vf-navigation vf-navigation--global | vf-cluster">
+    <ul class="vf-navigation__list | vf-list | vf-cluster__inner">
+      <li class="vf-navigation__item">
+        <a class="vf-navigation__link vf-mega-menu__link vf-mega-menu__link--has-section" data-vf-js-mega-menu-section-id="about-content-section" href="/about">
+              About
+            </a>
+      </li>
+      <li class="vf-navigation__item">
+        <a class="vf-navigation__link vf-mega-menu__link vf-mega-menu__link--has-section" data-vf-js-mega-menu-section-id="components-content-section" href="/components">
+              Components
+            </a>
+      </li>
+      <li class="vf-navigation__item">
+        <a href="https://github.com/visual-framework/vf-core" class="vf-navigation__link vf-mega-menu__link">GitHub</a>
+      </li>
+      <li class="vf-navigation__item">
+        <a href="https://join.slack.com/t/visual-framework/shared_invite/enQtNDAxNzY0NDg4NTY0LWFhMjEwNGY3ZTk3NWYxNWVjOWQ1ZWE4YjViZmY1YjBkMDQxMTNlNjQ0N2ZiMTQ1ZTZiMGM4NjU5Y2E0MjM3ZGQ" class="vf-navigation__link vf-mega-menu__link">Slack</a>
+      </li>
+      <li class="vf-navigation__item">
+        <a class="vf-navigation__link vf-mega-menu__link" data-vf-js-mega-menu-section-id="search-content-section" href="/search">
+              Search
+            </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="vf-mega-menu__content">
+  <div class="vf-mega-menu__content__section" data-vf-js-mega-menu-section="about-content-section" role="menu" aria-hidden="true">
+    <section class="vf-summary-container | embl-grid">
+      <div class="vf-section-header">
+        <h2 class="vf-section-header__heading">The Visual Framework</h2>
+        <p class="vf-section-header__text">Good defaults and technical flexibility for life science websites</p>
+        <p class="vf-section-header__text">
+          <a href="/about">Learn about the framework</a>
+        </p>
+      </div>
+      <div class="vf-section-content | vf-grid vf-grid__col-3">
+        <div>
+          <div class="vf-section-header">
+            <h2 class="vf-section-header__heading"></h2>
+          </div>
+          <nav class="vf-navigation vf-navigation--main">
+            <ul class="vf-navigation__list | vf-list | vf-cluster__inner | vf-stack vf-stack--400">
+              <li class="vf-navigation__item">
+                <a href="https://stable.visual-framework.dev/design-principles/" class="vf-navigation__link">Principles</a>
+              </li>
+              <li class="vf-navigation__item">
+                <a href="https://stable.visual-framework.dev/updates/" class="vf-navigation__link">Updates and blog</a>
+              </li>
+              <li class="vf-navigation__item">
+                <a href="https://stable.visual-framework.dev/about/roadmap/" class="vf-navigation__link">Roadmap</a>
+              </li>
+              <li class="vf-navigation__item">
+                <a href="https://stable.visual-framework.dev/about/faq/" class="vf-navigation__link">FAQ</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <div class="vf-section-header">
+            <h2 class="vf-section-header__heading"></h2>
+          </div>
+          <nav class="vf-navigation vf-navigation--main">
+            <ul class="vf-navigation__list | vf-list | vf-cluster__inner | vf-stack vf-stack--400">
+              <li class="vf-navigation__item">
+                <a href="https://stable.visual-framework.dev/guidance/" class="vf-navigation__link">Guidance</a>
+              </li>
+              <li class="vf-navigation__item">
+                <a href="https://stable.visual-framework.dev/design-tokens/" class="vf-navigation__link">Design tokens</a>
+              </li>
+              <li class="vf-navigation__item">
+                <a href="https://stable.visual-framework.dev/design-kit/" class="vf-navigation__link">Figma resources</a>
+              </li>
+              <li class="vf-navigation__item">
+                <a href="https://stable.visual-framework.dev/troubleshooting/" class="vf-navigation__link">Troubleshooting</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <div class="vf-section-header">
+            <h2 class="vf-section-header__heading"></h2>
+          </div>
+          <nav class="vf-navigation vf-navigation--main">
+            <ul class="vf-navigation__list | vf-list | vf-cluster__inner | vf-stack vf-stack--400">
+              <li class="vf-navigation__item">
+                <a href="https://stable.visual-framework.dev/developing/" class="vf-navigation__link">Contributing and developing</a>
+              </li>
+              <li class="vf-navigation__item">
+                <a href="https://stable.visual-framework.dev/developing/getting-started/setting-up/" class="vf-navigation__link">Setting up your development environment</a>
+              </li>
+              <li class="vf-navigation__item">
+                <a href="https://stable.visual-framework.dev/guidance/creating-components" class="vf-navigation__link">Creating a component</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="vf-mega-menu__content__section" data-vf-js-mega-menu-section="components-content-section" role="menu" aria-hidden="true">
+    <section class="vf-summary-container">
+
+      <section class="vf-grid">
+        <div class="vf-section-content | vf-grid vf-grid__col-4">
+          <article class="vf-stack vf-stack--400">
+
+            <!--<div class="vf-section-header">
+              <h2 class="vf-section-header__heading"> Patterns</h2>
+            </div>
+
+            <div class="vf-content">
+              <ul class="vf-navigation__list | vf-list | vf-cluster__inner | vf-stack vf-stack--200">
+
+                <li class="vf-navigation__item">
+                  <a href="/patterns/article/" class="vf-navigation__link">Article example pattern (with EMBL header, footer)</a>
+                </li>
+
+                <li class="vf-navigation__item">
+                  <a href="/patterns/boilerplate-generic-embl-ebi/" class="vf-navigation__link">Content page (with the EMBL-EBI header, footer)</a>
+                </li>
+
+                <li class="vf-navigation__item">
+                  <a href="/patterns/error-pages/" class="vf-navigation__link">Error pages</a>
+                </li>
+
+                <li class="vf-navigation__item">
+                  <a href="/patterns/integration/" class="vf-navigation__link">Integrating with existing sites and CSS, JS</a>
+                </li>
+
+                <li class="vf-navigation__item">
+                  <a href="/patterns/landing-page/" class="vf-navigation__link">Landing page</a>
+                </li>
+
+                <li class="vf-navigation__item">
+                  <a href="/patterns/scientific-service/" class="vf-navigation__link">Scientific resource landing page</a>
+                </li>
+
+                <li class="vf-navigation__item">
+                  <a href="/patterns/search-results/" class="vf-navigation__link">Search results</a>
+                </li>
+
+              </ul>
+            </div> -->
+
+            <div class="vf-section-header">
+              <h2 class="vf-section-header__heading"> Container</h2>
+            </div>
+
+            <ul class="vf-navigation__list | vf-list | vf-cluster__inner | vf-stack vf-stack--200">
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-banner']">Banner</a>
+              </li>
+              <!--
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-card-container']">Card Container</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-content']">Content</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-banner-elixir']">ELIXIR Banner</a>
+              </li>
+              -->
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-hero']">Hero</a>
+              </li>
+              <!--
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-intro']">Intro</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-mega-menu']">Mega menu</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-news-container']">News Container</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-summary-container']">Summary Container</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-video-container']">Video Container</a>
+              </li>
+              -->
+            </ul>
+          </article>
+
+          <article class="vf-stack vf-stack--400">
+
+            <div class="vf-section-header">
+              <h2 class="vf-section-header__heading"> Block</h2>
+            </div>
+
+            <ul class="vf-navigation__list | vf-list | vf-cluster__inner | vf-stack vf-stack--200">
+
+              <!--
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-article-meta-information']">Article Meta Information</a>
+              </li>
+              -->
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-back-to-top']">Back to top</a>
+              </li>
+              <!--
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-breadcrumbs']">Breadcrumbs</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-card']">Card</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-code-example']">Code Example</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-details']">Details</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-discussion']">Discussion</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-dropdown']">Dropdown</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-embed']">Embed</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-footer']">Footer</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-global-header']">Global Header</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-lede']">Lede</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-navigation']">Navigation</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-page-header']">Page Header</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-pagination']">Pagination</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-profile']">Profile</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-progress-indicator']">Progress indicator</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-search']">Search</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-section-header']">Section Header</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-social-links']">Social icons</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-summary']">Summary</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-table']">Table</a>
+              </li>
+              -->
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-tabs']">Tabs</a>
+              </li>
+              <!--
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-tags']">Tags</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-tree']">Tree</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-video']">Video</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-video-teaser']">Video Teaser</a>
+              </li>
+              -->
+            </ul>
+          </article>
+
+          <article class="vf-stack vf-stack--400">
+
+            <div class="vf-section-header">
+              <h2 class="vf-section-header__heading"> Element</h2>
+            </div>
+
+            <ul class="vf-navigation__list | vf-list | vf-cluster__inner | vf-stack vf-stack--200">
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-badge']">Badge</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-blockquote']">Blockquote</a>
+              </li>
+              <!--
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-bookmark']">Bookmark</a>
+              </li>
+              -->
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-button']">Button</a>
+              </li>
+              <!--
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-divider']">Divider</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-favicon']">Favicon</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-figure']">Figure</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-heading']">Headings</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-link']">Link</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-list']">Lists</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-logo']">Logo</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-text']">Text</a>
+              </li>
+              -->
+            </ul>
+            <!--
+            <div class="vf-section-header">
+              <h2 class="vf-section-header__heading"> Layout</h2>
+            </div>
+
+            <ul class="vf-navigation__list | vf-list | vf-cluster__inner | vf-stack vf-stack--200">
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-body']">Body</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-cluster']">Cluster</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-flag']">Flag</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-grid']">Grid</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-sidebar']">Sidebar Layout</a>
+              </li>
+
+              <li class="vf-navigation__item">
+                <a class="vf-navigation__link" [routerLink]="['/components/vf-stack']">Stack</a>
+              </li>
+
+            </ul>
+            -->
+          </article>
+
+          <!-- some tools don't have a natural place in the component library and are linked to github -->
+          <article class="vf-stack vf-stack--400">
+
+            <div class="vf-section-header">
+              <h2 class="vf-section-header__heading vf-section-header__heading--is-link">
+                <a href="/components#form">Forms</a>
+                <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+                </svg>
+              </h2>
+            </div>
+
+            <div><hr class="vf-divider"></div>
+
+            <div class="vf-section-header">
+              <h2 class="vf-section-header__heading vf-section-header__heading--is-link">
+                <a href="/components#utility">Utility</a>
+                <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+                </svg>
+              </h2>
+            </div>
+
+            <div><hr class="vf-divider"></div>
+
+            <div class="vf-section-header">
+              <h2 class="vf-section-header__heading vf-section-header__heading--is-link">
+                <a href="/components#tools">Tools</a>
+                <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+                </svg>
+              </h2>
+            </div>
+
+          </article>
+        </div>
+      </section>
+    </section>
+  </div>
+  <div class="vf-mega-menu__content__section" data-vf-js-mega-menu-section="search-content-section" role="menu" aria-hidden="true">
+    <section class="embl-grid embl-grid--has-centered-content">
+      <div class="vf-section-header">
+        <h2 class="vf-section-header__heading" id="search"> Search</h2>
+      </div>
+
+      <form action="/search/" method="GET" class="vf-form vf-form--search vf-form--search--responsive | vf-sidebar vf-sidebar--end">
+        <div class="vf-sidebar__inner">
+          <div class="vf-form__item | vf-search__item">
+            <label class="vf-form__label vf-u-sr-only | vf-search__label" for="search_query"></label>
+            <input type="search" id="search" placeholder="Search components and documentation" name="search_query" class="vf-search__input | vf-form__input" data-vf-search-client-side-input data-vf-search-client-side-destination-prefix="">
+          </div>
+          <button type="submit" class="vf-search__button | vf-button vf-button--primary">
+            <span class="vf-button__text">Search</span>
+
+            <svg class="vf-icon vf-icon--search-btn | vf-button__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 140 140" width="140" height="140">
+              <g transform="matrix(5.833333333333333,0,0,5.833333333333333,0,0)">
+                <path d="M23.414,20.591l-4.645-4.645a10.256,10.256,0,1,0-2.828,2.829l4.645,4.644a2.025,2.025,0,0,0,2.828,0A2,2,0,0,0,23.414,20.591ZM10.25,3.005A7.25,7.25,0,1,1,3,10.255,7.258,7.258,0,0,1,10.25,3.005Z" fill="#FFFFFF" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"></path>
+              </g>
+            </svg>
+          </button>
+        </div>
+      </form>
+      <div></div>
+    </section>
+
+  </div>
+</div>

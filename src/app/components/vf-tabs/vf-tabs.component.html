@@ -1,0 +1,510 @@
+<section class="vf-content component-library-notes | vf-stack vf-stack--400">
+
+    <!-- no special content -->
+
+    <section class="vf-intro" id="about">
+
+        <div>
+            <!-- empty -->
+        </div>
+
+        <div class="vf-stack">
+
+            <h1 class="vf-intro__heading vf-intro__heading--has-tag">Tabs
+
+ <a href="/guidance/component-types/" class="vf-badge vf-badge--primary vf-badge--phases">block</a>
+            </h1>
+            <p class="vf-lede">
+                <span>The ever-useful tabs. This component works best with the included JS, but you can use the CSS styling on other tab implementations, like Bootstrap tabs.</span>
+            </p>
+
+            <p class="vf-intro__text">
+                <a class="vf-link" href="https://github.com/visual-framework/vf-core/tree/develop/components/vf-tabs"><img src="https://img.shields.io/badge/github-vf--tabs-blue" alt="github location"/></a>
+                <a class="vf-link" href="https://badge.fury.io/js/%40visual-framework%2Fvf-tabs"><img src="https://badge.fury.io/js/%40visual-framework%2Fvf-tabs.svg" alt="npm version"></a>
+            </p>
+        </div>
+    </section>
+    <hr class="vf-divider">
+
+    <section class="embl-grid">
+        <div class="vf-section-header">
+            <h2 class="vf-section-header__heading" id="usage"> Usage</h2>
+        </div>
+        <article>
+            <p>These tabs have been made with accessibility in mind, however tabs should be avoided where content structure avoids the need to use tabs.</p>
+            <p>Nested tabs are also possible, as demonstrated in the example, however this provides further usability challenges and should be strongly avoided.</p>
+            <h3>Angular</h3>
+            <p>As of version 2.1.5 vf-tabs has experimental Angular support.
+This package was generated with Angular version 15.2.0 and has been tested on application with Angular version 15.2.0.</p>
+            <ol>
+                <li>Install <code>yarn add @visual-framework/vf-tabs</code>
+                </li>
+                <li>Import in your app.module<pre><code>import {{ '{' }} VfTabsAngularModule {{ '}' }} from '@visual-framework/vf-tabs/vf-tabs.angular';
+
+@NgModule({{ '{' }}
+  imports: [VfTabsAngularModule, YourOtherModules],
+  ...
+{{ '}' }})
+</code></pre>
+                </li>
+                <li>Can be used as<pre><code>&lt;vf-tabs [tabsdata]=&quot;tabsdata&quot;&gt;&lt;/vf-tabs&gt;
+</code></pre>
+                </li>
+            </ol>
+            <p>Here <code>tabsdata</code> can be declared in app.component.ts as below -</p>
+            <pre><code> public tabsdata = [
+  [
+    {{ '{' }} tab_title: `Section` {{ '}' }},
+    {{ '{' }} tab_number: 58 {{ '}' }},
+    {{ '{' }} tab_heading: `Section 1` {{ '}' }},
+    {{ '{' }} tab_content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, tortor nec pharetra ultricies, ante erat imperdiet velit, nec laoreet enim lacus a velit. &lt;a class='vf-link' href='#'&gt;Nam luctus&lt;/a&gt;, enim in interdum condimentum, nisl diam iaculis lorem, vel volutpat mi leo sit amet lectus. Praesent non odio bibendum magna bibendum accumsan.` {{ '}' }}
+  ],
+  [
+    {{ '{' }} tab_title: `A Short Section` {{ '}' }},
+    {{ '{' }} tab_number: 546 {{ '}' }},
+    {{ '{' }} tab_heading: `Section 2` {{ '}' }},
+    {{ '{' }} tab_content: `Nullam at diam nec arcu suscipit auctor non a erat. Sed et magna semper, eleifend magna non, facilisis nisl. Proin et est et lorem dictum finibus ut nec turpis. Aenean nisi tortor, euismod a mauris a, mattis scelerisque tortor. Sed dolor risus, varius a nibh id, condimentum lacinia est. In lacinia cursus odio a aliquam. Curabitur tortor magna, laoreet ut rhoncus at, sodales consequat tellus.` {{ '}' }}
+  ],
+  [
+    {{ '{' }} tab_title: `A Rather Long Section` {{ '}' }},
+    {{ '{' }} tab_number: 878 {{ '}' }},
+    {{ '{' }} tab_heading: `Section 3` {{ '}' }},
+    {{ '{' }} tab_content: `Phasellus ac tristique orci. Nulla maximus &lt;a class='vf-link' href='#'&gt;justo nec dignissim consequat&lt;/a&gt;. Sed vehicula diam sit amet mi efficitur vehicula in in nisl. Aliquam erat volutpat. Suspendisse lorem turpis, accumsan consequat consectetur gravida, &lt;a class='vf-link' href='#'&gt;pellentesque ac ante&lt;/a&gt;. Aliquam in commodo ligula, sit amet mollis neque. Vestibulum at facilisis massa.` {{ '}' }}
+  ],
+  [
+    {{ '{' }} tab_title: `Nested Tabs` {{ '}' }},
+    {{ '{' }} tab_number: 8793456 {{ '}' }},
+    {{ '{' }} tab_heading: `Section 4` {{ '}' }},
+    {{ '{' }} tab_content: `
+          &lt;div class=&quot;vf-tabs&quot;&gt;
+            &lt;ul class=&quot;vf-tabs__list&quot; data-vf-js-tabs&gt;
+              &lt;li class=&quot;vf-tabs__item&quot;&gt;
+                &lt;a class=&quot;vf-tabs__link&quot; href=&quot;#vf-tabs__section-nested--234548&quot;&gt;Nested tab 1&lt;/a&gt;
+              &lt;/li&gt;
+              &lt;li class=&quot;vf-tabs__item&quot;&gt;
+                &lt;a class=&quot;vf-tabs__link&quot; href=&quot;#vf-tabs__section-nested--29974&quot;&gt;Nested tab 2&lt;/a&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+
+          &lt;div class=&quot;vf-tabs-content&quot; data-vf-js-tabs-content&gt;
+            &lt;section class=&quot;vf-tabs__section&quot; id=&quot;vf-tabs__section-nested--234548&quot;&gt;
+              &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, tortor nec pharetra ultricies, ante erat imperdiet velit, nec laoreet enim lacus a velit. &lt;a href=&quot;#&quot;&gt;Nam luctus&lt;/a&gt;, enim in interdum condimentum, nisl diam iaculis lorem, vel volutpat mi leo sit amet lectus. Praesent non odio bibendum magna bibendum accumsan.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;section class=&quot;vf-tabs__section&quot; id=&quot;vf-tabs__section-nested--29974&quot;&gt;
+              &lt;p&gt;Nullam at diam nec arcu suscipit auctor non a erat. Sed et magna semper, eleifend magna non, facilisis nisl. Proin et est et lorem dictum finibus ut nec turpis. Aenean nisi tortor, euismod a mauris a, mattis scelerisque tortor. Sed dolor risus, varius a nibh id, condimentum lacinia est. In lacinia cursus odio a aliquam. Curabitur tortor magna, laoreet ut rhoncus at, sodales consequat tellus.&lt;/p&gt;
+            &lt;/section&gt;
+          &lt;/div&gt;`{{ '}' }}
+  ],
+  [
+    {{ '{' }}tab_title: `A fifth section`{{ '}' }},
+    {{ '{' }}tab_number: 545541{{ '}' }},
+    {{ '{' }}tab_heading: `Section 5`{{ '}' }},
+    {{ '{' }}tab_content: `Phasellus ac tristique orci. Nulla maximus &lt;a class=&quot;vf-link&quot; href=&quot;#&quot;&gt;justo nec dignissim consequat&lt;/a&gt;. Sed vehicula diam sit amet mi efficitur vehicula in in nisl. Aliquam erat volutpat. Suspendisse lorem turpis, accumsan consequat consectetur gravida, &lt;a class=&quot;vf-link&quot; href=&quot;#&quot;&gt;pellentesque ac ante&lt;/a&gt;. Aliquam in commodo ligula, sit amet mollis neque. Vestibulum at facilisis massa.`{{ '}' }}
+  ],
+  [
+    {{ '{' }}tab_title: `A sixth section`{{ '}' }},
+    {{ '{' }}tab_number: 621211{{ '}' }},
+    {{ '{' }}tab_heading: `Section 6`{{ '}' }},
+    {{ '{' }}tab_content: `Phasellus ac tristique orci. Nulla maximus &lt;a class=&quot;vf-link&quot; href=&quot;#&quot;&gt;justo nec dignissim consequat&lt;/a&gt;. Sed vehicula diam sit amet mi efficitur vehicula in in nisl. Aliquam erat volutpat. Suspendisse lorem turpis, accumsan consequat consectetur gravida, &lt;a class=&quot;vf-link&quot; href=&quot;#&quot;&gt;pellentesque ac ante&lt;/a&gt;. Aliquam in commodo ligula, sit amet mollis neque. Vestibulum at facilisis massa.`{{ '}' }}
+  ],
+  [
+    {{ '{' }} tab_title: `Section` {{ '}' }},
+    {{ '{' }} tab_number: 99999 {{ '}' }},
+    {{ '{' }} tab_heading: `Default` {{ '}' }},
+    {{ '{' }} tab_content: `An &lt;a href=&quot;/#vf-tabs__section--88888&quot;&gt;example deep link&lt;/a&gt; loading this anchor will directly activate the neighbouring tab. &lt;code&gt;/vf-tabs#vf-tabs__section--88888&lt;/code&gt;` {{ '}' }}
+  ],
+  [
+    {{ '{' }} tab_title: `A Short Section` {{ '}' }},
+    {{ '{' }} tab_number: 88888 {{ '}' }},
+    {{ '{' }} tab_heading: `Deep-linked tab` {{ '}' }},
+    {{ '{' }} tab_content: `If you see me on page load, the deep link has worked.` {{ '}' }}
+  ]
+];
+</code></pre>
+            <ol start="4">
+                <li>
+                    <p>CSS to be added to your styles.scss</p>
+                    <pre><code>@import '../node_modules/@visual-framework/vf-sass-config/index.scss';
+@import '../node_modules/@visual-framework/vf-tabs/vf-tabs.scss';
+</code></pre>
+                    <p>you should also install <a href="https://stable.visual-framework.dev/components/vf-sass-starter">vf-sass-starter</a> for the styles</p>
+                </li>
+                <li>
+                    <p>Javascript file:</p>
+                    <ol>
+                        <li>Copy the vf-tabs.js (from Assets section below) to your src/assets/vf-tabs folder.</li>
+                        <li>Comment or remove the  last line &quot;export {{ '{' }} vfTabs {{ '{' }};&quot; in this copied file.</li>
+                        <li>In the angular.json inside &quot;scripts&quot;: [] add the above file reference like -
+&quot;scripts&quot;: [
+&quot;src/assets/vf-tabs/vf-tabs.js&quot;
+]</li>
+                        <li>Rerun the project if already running.</li>
+                    </ol>
+                </li>
+            </ol>
+            <p>Usage:</p>
+            <pre><code>&lt;vf-tabs [tabsdata]=&quot;tabsdata&quot;&gt;&lt;/vf-tabs&gt;
+</code></pre>
+
+            <h3>Deep linking</h3>
+            <p>A tab can be activated on page load by passing it on the link <code>#vf-tabs__section-tab_id</code>
+            </p>
+            <p>This is the default behaviour and can be deactivated when invoking vfTabs:</p>
+            <pre><code class="language-js">// vfTabs(scope, activateDeepLinkOnLoad)
+vfTabs(document, false);
+</code></pre>
+            <p>Note: The deep linking feature is not designed with <code>vf-location-nearest</code> compatibility. A <code>vf-location-nearest</code> tab may not respect a deep linked hash url.</p>
+
+        </article>
+    </section>
+
+    <h2 id="variants" class="vf-text vf-text-heading--1 vf-text--invert">Variants</h2>
+
+    <div class="vf-section-header">
+        <h2 class="vf-section-header__heading vf-section-header__heading--is-link" id="vf-tabs--default">
+            <a href="#vf-tabs--default">Default variant</a>
+            <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+            </svg>
+        </h2>
+    </div>
+
+    <article class="vf-stack vf-stack--lg vf-u-margin__bottom--1200"
+                   style="clear: both; /* insurance against strange components */"
+          >
+
+        <div class="vf-u-padding--400"
+                    style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
+                >
+
+             <vf-tabs [tabsdata]="tabsdata"></vf-tabs>
+
+        </div>
+
+        <details class="vf-details vf-box vf-box--outline">
+            <summary class="vf-details--summary">Angular syntax</summary>
+
+            <pre><code>&lt;vf-tabs [tabsdata]=&quot;tabsdata&quot;&gt;&lt;/vf-tabs&gt;
+                  </code></pre>
+
+        </details>
+    </article>
+
+    <div class="vf-section-header">
+        <h2 class="vf-section-header__heading vf-section-header__heading--is-link" id="vf-tabs--nested">
+            <a href="#vf-tabs--nested">Nested variant</a>
+            <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+            </svg>
+        </h2>
+    </div>
+
+    <article class="vf-stack vf-stack--lg vf-u-margin__bottom--1200"
+                   style="clear: both; /* insurance against strange components */"
+          >
+
+        <div class="vf-u-padding--400"
+                    style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
+                >
+
+            <div class="vf-tabs">
+                <ul class="vf-tabs__list" data-vf-js-tabs>
+                    <li class="vf-tabs__item">
+                        <a class="vf-tabs__link" href="#vf-tabs__section--58">Section</a>
+                    </li>
+                    <li class="vf-tabs__item">
+                        <a class="vf-tabs__link" href="#vf-tabs__section--546">A Short Section</a>
+                    </li>
+                    <li class="vf-tabs__item">
+                        <a class="vf-tabs__link" href="#vf-tabs__section--878">A Rather Long Section</a>
+                    </li>
+                    <li class="vf-tabs__item">
+                        <a class="vf-tabs__link" href="#vf-tabs__section--8793456">Nested Tabs</a>
+                    </li>
+                    <li class="vf-tabs__item">
+                        <a class="vf-tabs__link" href="#vf-tabs__section--545541">A fifth section</a>
+                    </li>
+                    <li class="vf-tabs__item">
+                        <a class="vf-tabs__link" href="#vf-tabs__section--621211">A sixth section</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="vf-tabs-content" data-vf-js-tabs-content>
+                <section class="vf-tabs__section" id="vf-tabs__section--58">
+                    <h2>Section 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, tortor nec pharetra ultricies, ante erat imperdiet velit, nec laoreet enim lacus a velit. <a class="vf-link" href="#">Nam luctus</a>, enim in interdum condimentum, nisl diam iaculis lorem, vel volutpat mi leo sit amet lectus. Praesent non odio bibendum magna bibendum accumsan.</p>
+                </section>
+                <section class="vf-tabs__section" id="vf-tabs__section--546">
+                    <h2>Section 2</h2>
+                    <p>Nullam at diam nec arcu suscipit auctor non a erat. Sed et magna semper, eleifend magna non, facilisis nisl. Proin et est et lorem dictum finibus ut nec turpis. Aenean nisi tortor, euismod a mauris a, mattis scelerisque tortor. Sed dolor risus, varius a nibh id, condimentum lacinia est. In lacinia cursus odio a aliquam. Curabitur tortor magna, laoreet ut rhoncus at, sodales consequat tellus.</p>
+                </section>
+                <section class="vf-tabs__section" id="vf-tabs__section--878">
+                    <h2>Section 3</h2>
+                    <p>Phasellus ac tristique orci. Nulla maximus <a class="vf-link" href="#">justo nec dignissim consequat</a>. Sed vehicula diam sit amet mi efficitur vehicula in in nisl. Aliquam erat volutpat. Suspendisse lorem turpis, accumsan consequat consectetur gravida, <a class="vf-link" href="#">pellentesque ac ante</a>. Aliquam in commodo ligula, sit amet mollis neque. Vestibulum at facilisis massa.</p>
+                </section>
+                <section class="vf-tabs__section" id="vf-tabs__section--8793456">
+                    <h2>Section 4</h2>
+                    <p>
+                        <div class="vf-tabs">
+                            <ul class="vf-tabs__list" data-vf-js-tabs>
+                                <li class="vf-tabs__item">
+                                    <a class="vf-tabs__link" href="#vf-tabs__section-nested--234548">Nested tab 1</a>
+                                </li>
+                                <li class="vf-tabs__item">
+                                    <a class="vf-tabs__link" href="#vf-tabs__section-nested--29974">Nested tab 2</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="vf-tabs-content" data-vf-js-tabs-content>
+                            <section class="vf-tabs__section" id="vf-tabs__section-nested--234548">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, tortor nec pharetra ultricies, ante erat imperdiet velit, nec laoreet enim lacus a velit. <a href="#">Nam luctus</a>, enim in interdum condimentum, nisl diam iaculis lorem, vel volutpat mi leo sit amet lectus. Praesent non odio bibendum magna bibendum accumsan.</p>
+                            </section>
+                            <section class="vf-tabs__section" id="vf-tabs__section-nested--29974">
+                                <p>Nullam at diam nec arcu suscipit auctor non a erat. Sed et magna semper, eleifend magna non, facilisis nisl. Proin et est et lorem dictum finibus ut nec turpis. Aenean nisi tortor, euismod a mauris a, mattis scelerisque tortor. Sed dolor risus, varius a nibh id, condimentum lacinia est. In lacinia cursus odio a aliquam. Curabitur tortor magna, laoreet ut rhoncus at, sodales consequat tellus.</p>
+                            </section>
+                        </div>
+                </section>
+                <section class="vf-tabs__section" id="vf-tabs__section--545541">
+                    <h2>Section 5</h2>
+                    <p>Phasellus ac tristique orci. Nulla maximus <a class="vf-link" href="#">justo nec dignissim consequat</a>. Sed vehicula diam sit amet mi efficitur vehicula in in nisl. Aliquam erat volutpat. Suspendisse lorem turpis, accumsan consequat consectetur gravida, <a class="vf-link" href="#">pellentesque ac ante</a>. Aliquam in commodo ligula, sit amet mollis neque. Vestibulum at facilisis massa.</p>
+                </section>
+                <section class="vf-tabs__section" id="vf-tabs__section--621211">
+                    <h2>Section 6</h2>
+                    <p>Phasellus ac tristique orci. Nulla maximus <a class="vf-link" href="#">justo nec dignissim consequat</a>. Sed vehicula diam sit amet mi efficitur vehicula in in nisl. Aliquam erat volutpat. Suspendisse lorem turpis, accumsan consequat consectetur gravida, <a class="vf-link" href="#">pellentesque ac ante</a>. Aliquam in commodo ligula, sit amet mollis neque. Vestibulum at facilisis massa.</p>
+                </section>
+            </div>
+
+        </div>
+
+        <details class="vf-details vf-box vf-box--outline">
+            <summary class="vf-details--summary">Angular syntax</summary>
+
+            <pre><code>&lt;vf-tabs [tabsdata]=&quot;tabsdata&quot;&gt;&lt;/vf-tabs&gt; //Please refer to usage section above on defining tabsdata.
+                  </code></pre>
+
+        </details>
+    </article>
+
+    <div class="vf-section-header">
+        <h2 class="vf-section-header__heading vf-section-header__heading--is-link" id="vf-tabs--deep-link">
+            <a href="#vf-tabs--deep-link">Deep Link variant</a>
+            <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+            </svg>
+        </h2>
+    </div>
+
+    <article class="vf-stack vf-stack--lg vf-u-margin__bottom--1200"
+                   style="clear: both; /* insurance against strange components */"
+          >
+
+        <div class="vf-u-padding--400"
+                    style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
+                >
+
+            <div class="vf-tabs">
+                <ul class="vf-tabs__list" data-vf-js-tabs>
+                    <li class="vf-tabs__item">
+                        <a class="vf-tabs__link" href="#vf-tabs__section--99999">Section</a>
+                    </li>
+                    <li class="vf-tabs__item">
+                        <a class="vf-tabs__link" href="#vf-tabs__section--88888">A Short Section</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="vf-tabs-content" data-vf-js-tabs-content>
+                <section class="vf-tabs__section" id="vf-tabs__section--99999">
+                    <h2>Default</h2>
+                    <p>An <a href="/components/vf-tabs#vf-tabs__section--88888">example deep link</a> loading this anchor will directly activate the neighbouring tab. <code>/vf-tabs#vf-tabs__section--88888</code>
+                    </p>
+                </section>
+                <section class="vf-tabs__section" id="vf-tabs__section--88888">
+                    <h2>Deep-linked tab</h2>
+                    <p>If you see me on page load, the deep link has worked.</p>
+                </section>
+            </div>
+
+        </div>
+
+        <details class="vf-details vf-box vf-box--outline">
+            <summary class="vf-details--summary">Angular syntax</summary>
+
+            <pre><code>&lt;vf-tabs [tabsdata]=&quot;tabsdata&quot;&gt;&lt;/vf-tabs&gt; //Please refer to usage section above on defining tabsdata.
+                  </code></pre>
+
+        </details>
+
+    </article>
+
+    <hr class="vf-divider">
+    <h2 id="examples" class="vf-text vf-text-heading--1 vf-text--invert">Examples</h2>
+
+    <section class=""></section>
+
+    <details class="vf-details">
+        <summary class="vf-details--summary" id="installation">Installation info</summary>
+        <p>This component is distributed with npm. After <a href="https://www.npmjs.com/get-npm">installing npm</a>, you can install the <code>vf-tabs</code> with this command.</p>
+        <pre><code>$ yarn add --dev @visual-framework/vf-tabs
+</code></pre>
+        <h3>Sass/CSS</h3>
+        <p>The source files included are written in <a href="http://sass-lang.com">Sass</a>(<code>scss</code>). You can point your Sass <code>include-path</code> at your <code>node_modules</code> directory and import it like this.</p>
+        <pre><code>@import &quot;@visual-framework/vf-tabs/index.scss&quot;;
+</code></pre>
+        <p>Make sure you import Sass requirements along with the modules. You can use a <a href="https://stable.visual-framework.dev/building/">project boilerplate</a> or the <a href="https://stable.visual-framework.dev/components/vf-sass-starter/">
+                <code>vf-sass-starter</code>
+            </a>
+        </p>
+    </details>
+    <div class="vf-stack vf-stack--custom" style="--vf-stack-margin--custom: .5rem;">
+        <h3>Changelog</h3>
+        <details class="vf-details" id="changelog">
+            <summary class="vf-details--summary">Changelog</summary>
+            <h3>2.1.10</h3>
+            <ul>
+                <li>Changed: Test cases added for Angular  <a href="https://github.com/visual-framework/vf-core/issues/1932">Tracking issue</a>
+                </li>
+                <li>Dependency update to be compatible with ESM packages<a href="https://github.com/visual-framework/vf-core/issues/2107">Tracking issue</a>
+                </li>
+            </ul>
+            <h3>2.1.9</h3>
+            <ul>
+                <li>Fixed: Tabs issue for some specific deep links on EMBL intranet</li>
+            </ul>
+            <h3>2.1.8</h3>
+            <ul>
+                <li>Fixed: Tabs script code updated to fix backward compatibility issues <a href="https://github.com/visual-framework/vf-core/issues/2147">Tracking issue</a>
+                </li>
+            </ul>
+            <h3>2.1.7</h3>
+            <ul>
+                <li>Updated: Tabs script code updated to accommodate 'EMBL People' tabs HTML structure <a href="https://github.com/visual-framework/vf-core/issues/2147">Tracking issue</a>
+                </li>
+            </ul>
+            <h3>2.1.6</h3>
+            <ul>
+                <li>Added : React support for Tabs <a href="https://github.com/visual-framework/vf-core/issues/2089">Tracking issue</a>
+                </li>
+            </ul>
+            <h3>2.1.5</h3>
+            <ul>
+                <li>Added : Experimental Angular support for Tabs <a href="https://github.com/visual-framework/vf-core/issues/2037">Tracking issue</a>
+                </li>
+            </ul>
+            <h3>2.1.4</h3>
+            <ul>
+                <li>Changelog correction <a href="https://github.com/visual-framework/vf-core/issues/2035">Tracking issue</a>
+                </li>
+            </ul>
+            <h3>2.1.3</h3>
+            <ul>
+                <li>Fixed lint errors. <a href="https://github.com/visual-framework/vf-core/issues/1935">Tracking issue</a>
+                </li>
+            </ul>
+            <h3>2.1.1</h3>
+            <ul>
+                <li>Dynamically updates the URL based on the active tab</li>
+                <li>Adds focus indicator and enables keyboard navigation</li>
+            </ul>
+            <h3>2.1.0</h3>
+            <ul>
+                <li>Support activation of specific vf-tabs on page load <code>#vf-tabs__section=tab_id</code>
+                </li>
+                <li>Exposes <code>vfTabsSwitch</code> function</li>
+                <li>https://github.com/visual-framework/vf-core/issues/1700</li>
+            </ul>
+            <h3>2.0.3</h3>
+            <ul>
+                <li>Use <code>set-type</code> mixin to set margins.</li>
+                <li>https://github.com/visual-framework/vf-core/pull/1698</li>
+            </ul>
+            <h3>2.0.2</h3>
+            <ul>
+                <li>Prevent hijacking of scroll when focusing tabs.</li>
+                <li>https://github.com/visual-framework/vf-core/pull/1696</li>
+                <li>Use new interactive colour token.</li>
+                <li>https://github.com/visual-framework/vf-core/issues/1688</li>
+            </ul>
+            <h3>2.0.1</h3>
+            <ul>
+                <li>Bug: Add missing <code>@import 'vf-global-variables';</code> to generate standalone <code>vf-tabs.css</code>.</li>
+                <li>https://github.com/visual-framework/vf-core/pull/1581</li>
+            </ul>
+            <h3>2.0.0</h3>
+            <ul>
+                <li>Updates the styling to match the design direction.</li>
+                <li>This is a no-code-change update. It has been marked as visually breaking due to the major design change.</li>
+                <li>https://github.com/visual-framework/vf-core/pull/1551</li>
+            </ul>
+            <h3>1.2.2</h3>
+            <ul>
+                <li>Conditional support of tab_heading in vf-tabs.njk template.</li>
+            </ul>
+            <h3>1.2.1</h3>
+            <ul>
+                <li>changes any <code>set-</code> style functions to cleaner version</li>
+            </ul>
+            <h3>1.2.0</h3>
+            <ul>
+                <li>Restructures that link between tabs from a sequential relationship to an explicit relationship based off the tab href and panel id.</li>
+                <li>https://github.com/visual-framework/vf-core/issues/1136</li>
+                <li>This is a non-breaking change that may be further improved with an optional data-vf-js-tab-id</li>
+            </ul>
+            <h3>1.1.2</h3>
+            <ul>
+                <li>JS linting</li>
+            </ul>
+            <h3>1.1.1</h3>
+            <ul>
+                <li>fixes the space a tab takes to 'max-content'</li>
+            </ul>
+            <h3>1.1.0</h3>
+            <ul>
+                <li>simplifies the CSS</li>
+                <li>makes multilple tabs look slightly nicer on mobile devices</li>
+            </ul>
+            <h3>1.0.0</h3>
+            <ul>
+                <li>Initial stable release</li>
+            </ul>
+        </details>
+    </div>
+    <h3>Assets <span id="assets"></span></h3>
+    <ul>
+        <li>
+            <a href="/assets/vf-tabs/vf-tabs.njk">Nunjucks template</a>
+        </li>
+        <li>
+            <a href="/assets/vf-tabs/vf-tabs.config.yml">Config</a>
+        </li>
+        <li>
+            <a href="/assets/vf-tabs/CHANGELOG.md">CHANGELOG.md</a>
+        </li>
+        <li>
+            <a href="/assets/vf-tabs/vf-tabs.css">vf-tabs.css</a>
+        </li>
+        <li>
+            <a href="/assets/vf-tabs/vf-tabs.js">vf-tabs.js</a>
+        </li>
+        <li>
+            <a href="/assets/vf-tabs/vf-tabs.react.js">vf-tabs.react.js</a>
+        </li>
+        <li>
+            <a href="/assets/vf-tabs/vf-tabs.scss">vf-tabs.scss</a>
+        </li>
+    </ul>
+
+    <hr>
+    <br/>
+    <p class="vf-text-body vf-text-body--4">
+File system location: <code>components/vf-tabs</code>
+    </p>
+
+</section>
+
+<p class="vf-text vf-text-body--3">
+      Find an issue on this page?
+      <a class="vf-link" href="https://github.com/visual-framework/vf-core/blob/develop/tools/vf-component-library/src/site/components/component-view.njk">Propose a change</a> or <a href="/guidance/discussing-the-vf" class="vf-link">discuss it</a>.
+    </p>

@@ -1,0 +1,720 @@
+<section class="vf-content component-library-notes | vf-stack vf-stack--400">
+
+    <!-- no special content -->
+
+    <section class="vf-intro" id="about">
+
+        <div>
+            <!-- empty -->
+        </div>
+
+        <div class="vf-stack">
+
+            <h1 class="vf-intro__heading vf-intro__heading--has-tag">Banner
+
+ <a href="/guidance/component-types/" class="vf-badge vf-badge--primary vf-badge--phases">container</a>
+            </h1>
+            <p class="vf-lede">
+                <span>Informs visitors about important changes or persistent conditions. Use this component if you need to communicate to visitors in a prominent way. Banners are placed at the top of the page or section they apply to, and below the page or section header.</span>
+            </p>
+
+            <p class="vf-intro__text">
+                <a class="vf-link" href="https://github.com/visual-framework/vf-core/tree/develop/components/vf-banner"><img src="https://img.shields.io/badge/github-vf--banner-blue" alt="github location"/></a>
+                <a class="vf-link" href="https://badge.fury.io/js/%40visual-framework%2Fvf-banner"><img src="https://badge.fury.io/js/%40visual-framework%2Fvf-banner.svg" alt="npm version"></a>
+            </p>
+        </div>
+    </section>
+
+    <hr class="vf-divider">
+
+    <section class="embl-grid">
+        <div class="vf-section-header">
+            <h2 class="vf-section-header__heading" id="usage"> Usage</h2>
+        </div>
+        <article>
+            <ul>
+                <li>General notice <code>vf-banner vf-banner--notice</code>
+                </li>
+                <li>In development services <code>vf-banner vf-banner--phase</code>
+                </li>
+                <li>Info <code>vf-banner vf-banner--alert vf-banner--info</code>
+                    <small>This replaces <code>vf-banner--phase</code>
+                    </small>
+                </li>
+                <li>Success <code>vf-banner vf-banner--alert vf-banner--success</code>
+                </li>
+                <li>Alert <code>vf-banner vf-banner--alert vf-banner--alert</code>
+                </li>
+                <li>Warning <code>vf-banner vf-banner--alert vf-banner--warning</code>
+                </li>
+            </ul>
+            <p>
+                <strong>note:</strong> The <code>vf-banner--alert</code> variants include the option to dismiss the banner. This is currently a 'bring your own JavaScript' button. To include a close button in the markup you need to make sure you have the variable <code>banner__dismissable</code> set to <code>true</code>:</p>
+            <pre><code>banner__dismissable: true
+</code></pre>
+            <h3>JS Documentation for <code>--modal</code> variant</h3>
+            <p>Like all JS-enabled components in the Visual Framework, if you wish to use the bundled JS, you need to include JS data attributes, here is an overview of what the options are for the <code>vf-banner--modal</code> variant.</p>
+            <ul>
+                <li>Enable VF JS:
+<ul>
+                        <li>data-vf-js-banner</li>
+                    </ul>
+                </li>
+                <li>Banner type:
+<ul>
+                        <li>
+                            <code>dismissible</code>: standard messaging type</li>
+                        <li>
+                            <code>blocking</code>: full screen</li>
+                        <li>
+                            <code>persistent</code>: no close button</li>
+                        <li>data-vf-js-banner-state=&quot;name_of_type&quot;</li>
+                    </ul>
+                </li>
+                <li>ESC to close:
+<ul>
+                        <li>Only works with <code>blocking</code> banner state</li>
+                        <li>data-vf-js-banner-esc-close=<code>&quot;y&quot;</code>
+                        </li>
+                    </ul>
+                </li>
+                <li>Button text:
+<ul>
+                        <li>Optional, leaving off will not inject a close button</li>
+                        <li>data-vf-js-banner-button-text=&quot;Accept and close&quot;</li>
+                    </ul>
+                </li>
+                <li>Button theme:
+<ul>
+                        <li>Optional, leaving off will default to the secondary theme.</li>
+                        <li>primary, secondary, tertiary themes are available</li>
+                        <li>data-vf-js-banner-button-theme=&quot;primary&quot;</li>
+                    </ul>
+                </li>
+                <li>Cookies:
+<ul>
+                        <li>Both are optional, leaving either off will deactivate cookie storage</li>
+                        <li>data-vf-js-banner-cookie-name=<code>&quot;myServiceName&quot;</code>
+                        </li>
+                        <li>data-vf-js-banner-cookie-version=<code>&quot;0.1&quot;</code> Incrementing this string will invalidate old cookies.</li>
+                    </ul>
+                </li>
+                <li>Extra buttons:
+<ul>
+                        <li>data-vf-js-banner-extra-button=<code>&quot;&lt;a href='#'&gt;Optional button&lt;/a&gt;&lt;a target='_blank' href='#'&gt;New tab button&lt;/a&gt;&quot;&gt;</code> This HTML string will be converted into VF markup for extra buttons. Optional.</li>
+                    </ul>
+                </li>
+                <li>Message:
+<ul>
+                        <li>data-vf-js-banner-modal-text: the <code>.innerHTML</code> of this element will be used as the markup for the message itself</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Angular</h3>
+            <p>As of version 2.0.0-alpha.0 vf-banner has experimental Angular support.
+This package was generated with Angular version 15.2.0 and has been tested on application with Angular version 15.2.0.</p>
+            <ol>
+                <li>
+                    <p>Install <code>yarn add @visual-framework/vf-banner</code>
+                    </p>
+                </li>
+                <li>
+                    <p>Import in your app.module</p>
+                    <pre><code>import {{ '{' }} VfBannerAngularModule {{ '}' }} from '@visual-framework/vf-banner/vf-banner.angular';
+
+@NgModule({{ '{' }}
+  imports: [VfBannerAngularModule, YourOtherModules],
+  ...
+{{ '}' }})
+</code></pre>
+                </li>
+                <li>
+                    <p>Can be used as</p>
+                    <pre><code>&lt;vf-banner [banner__variant]=&quot;'banner__info'&quot; [banner__dismissible]=&quot;true&quot; [banner__message]=&quot;'Here is some very, &lt;em&gt;very&lt;/em&gt; &lt;a class=\'vf-banner__link\' href=\'#\' onclick=\'return false;\'&gt;important information&lt;/a&gt;'&quot;&gt;&lt;/vf-banner&gt;
+</code></pre>
+                    <p>Possible combinations</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Options</th>
+                                <th>Default</th>
+                                <th>Release</th>
+                                <th>Applicable to banner types</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>banner__message</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>'basic'</td>
+                            </tr>
+                            <tr>
+                                <td>banner__type</td>
+                                <td></td>
+                                <td>'basic'</td>
+                                <td>current</td>
+                                <td>all types</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>'inline'</td>
+                                <td></td>
+                                <td>current</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>'fixed'</td>
+                                <td></td>
+                                <td>current</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>'top'</td>
+                                <td></td>
+                                <td>current</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>banner__variant</td>
+                                <td>'banner__info'</td>
+                                <td></td>
+                                <td></td>
+                                <td>'basic'</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>'banner__warning'</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>'banner__danger'</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>'banner__success'</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>banner__dismissible</td>
+                                <td>true, false</td>
+                                <td>false</td>
+                                <td></td>
+                                <td>'basic'</td>
+                            </tr>
+                            <tr>
+                                <td>banner__inline_href</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>'inline', 'top'</td>
+                            </tr>
+                            <tr>
+                                <td>banner__text</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>'fixed'</td>
+                            </tr>
+                            <tr>
+                                <td>data_service_id</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>'fixed'</td>
+                            </tr>
+                            <tr>
+                                <td>data_protection_version</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>'fixed'</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li>
+                    <p>CSS to be added to your styles.scss</p>
+                    <pre><code>@import '../node_modules/@visual-framework/vf-sass-config/index.scss';
+
+</code></pre>
+                    <p>as per your banner of choice add all or some to your styles.scss</p>
+                    <pre><code>@import '../node_modules/@visual-framework/vf-banner/vf-banner.scss';
+@import '../node_modules/@visual-framework/vf-banner/vf-banner--phase.scss';
+@import '../node_modules/@visual-framework/vf-banner/vf-banner--alerts.scss';
+@import '../node_modules/@visual-framework/vf-banner/vf-banner--fixed.scss';
+@import '../node_modules/@visual-framework/vf-banner/vf-banner--gdpr.scss';
+
+</code></pre>
+                    <p>for the 'fixed' and 'top' banner type additionally add below to styles.scss</p>
+                    <pre><code>@import &quot;../node_modules/@visual-framework/vf-badge/vf-badge.scss&quot;;
+@import '../node_modules/@visual-framework/vf-button/vf-button.scss';
+@import '../node_modules/@visual-framework/vf-grid/vf-grid.scss';
+
+</code></pre>
+                    <p>you should also install <a href="https://stable.visual-framework.dev/components/vf-sass-starter">vf-sass-starter</a> for the styles</p>
+                </li>
+                <li>
+                    <p>Important note on 'fixed' and 'top' variants for Angular:</p>
+                    <p>For the 'fixed' and 'top' variant to work properly in Angular we need to make sure we follow the below additional steps</p>
+                    <ol>
+                        <li>Copy the vf-banner.js (from Assets section below) to your src/assets/vf-banner folder.</li>
+                        <li>Comment or remove the  last line &quot;export {{ '{' }} vfBanner {{ '}' }};&quot; in this copied file.</li>
+                        <li>In the angular.json inside &quot;scripts&quot;: [] add the above file reference like -
+&quot;scripts&quot;: [
+&quot;src/assets/vf-banner/vf-banner.js&quot;
+]</li>
+                        <li>Rerun the project if already running.</li>
+                    </ol>
+                </li>
+            </ol>
+            <p>Usage:</p>
+            <pre><code>&lt;vf-banner [banner__variant]=&quot;'banner__info'&quot; [banner__dismissible]=&quot;true&quot; [banner__message]=&quot;'Here is some very, &lt;em&gt;very&lt;/em&gt; &lt;a class=\'vf-banner__link\' href=\'#\' onclick=\'return false;\'&gt;important information&lt;/a&gt;'&quot;&gt;&lt;/vf-banner&gt;
+</code></pre>
+
+        </article>
+    </section>
+
+    <h2 id="variants" class="vf-text vf-text-heading--1 vf-text--invert">Variants</h2>
+
+    <div class="vf-section-header">
+        <h2 class="vf-section-header__heading vf-section-header__heading--is-link" id="vf-banner--info">
+            <a href="#vf-banner--info">Info variant</a>
+            <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+            </svg>
+        </h2>
+    </div>
+
+    <article class="vf-stack vf-stack--lg vf-u-margin__bottom--1200"
+                   style="clear: both; /* insurance against strange components */"
+          >
+
+        <div class="vf-u-padding--400"
+                    style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
+                >
+
+            <vf-banner [banner__variant]="'banner__info'" [banner__dismissible]="true" [banner__message]="'Here is some very, <em>very</em> <a class=\'vf-banner__link\' href=\'#\' onclick=\'return false;\'>important information</a>'"></vf-banner>
+
+        </div>
+
+        <details class="vf-details vf-box vf-box--outline">
+            <summary class="vf-details--summary">Angular syntax</summary>
+
+            <pre><code>&lt;vf-banner [banner__variant]=&quot;&#39;banner__info&#39;&quot; [banner__dismissible]=&quot;true&quot; [banner__message]=&quot;&#39;Here is some very, &lt;em&gt;very&lt;/em&gt; &lt;a class=&#92;&#39;vf-banner__link&#92;&#39; href=&#92;&#39;#&#92;&#39; onclick=&#92;&#39;return false;&#92;&#39;&gt;important information&lt;/a&gt;&#39;&quot;&gt;&lt;/vf-banner&gt;
+                  </code></pre>
+
+        </details>
+    </article>
+
+    <div class="vf-section-header">
+        <h2 class="vf-section-header__heading vf-section-header__heading--is-link" id="vf-banner--warning">
+            <a href="#vf-banner--warning">Warning variant</a>
+            <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+            </svg>
+        </h2>
+    </div>
+
+    <article class="vf-stack vf-stack--lg vf-u-margin__bottom--1200"
+                   style="clear: both; /* insurance against strange components */"
+          >
+
+        <div class="vf-u-padding--400"
+                    style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
+                >
+
+            <vf-banner [banner__variant]="'banner__warning'" [banner__dismissible]="true" [banner__message]="'Easy now, easy does it. <a class=\'vf-banner__link\' href=\'JavaScript:Void(0);\'>link example</a>'"></vf-banner>
+
+        </div>
+
+        <details class="vf-details vf-box vf-box--outline">
+            <summary class="vf-details--summary">Angular syntax</summary>
+
+            <pre><code>&lt;vf-banner [banner__variant]=&quot;&#39;banner__warning&#39;&quot; [banner__dismissible]=&quot;true&quot; [banner__message]=&quot;&#39;Easy now, easy does it. &lt;a class=&#92;&#39;vf-banner__link&#92;&#39; href=&#92;&#39;JavaScript:Void(0);&#92;&#39;&gt;link example&lt;/a&gt;&#39;&quot;&gt;&lt;/vf-banner&gt;
+                  </code></pre>
+
+        </details>
+    </article>
+
+    <div class="vf-section-header">
+        <h2 class="vf-section-header__heading vf-section-header__heading--is-link" id="vf-banner--danger">
+            <a href="#vf-banner--danger">Danger variant</a>
+            <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+            </svg>
+        </h2>
+    </div>
+
+    <article class="vf-stack vf-stack--lg vf-u-margin__bottom--1200"
+                   style="clear: both; /* insurance against strange components */"
+          >
+
+        <div class="vf-u-padding--400"
+                    style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
+                >
+
+            <vf-banner [banner__variant]="'banner__danger'" [banner__message]="'Oh dear, what have you done? <a class=\'vf-banner__link\' href=\'JavaScript:Void(0);\'>link example</a>'"></vf-banner>
+
+        </div>
+
+        <details class="vf-details vf-box vf-box--outline">
+            <summary class="vf-details--summary">Angular syntax</summary>
+
+            <pre><code>&lt;vf-banner [banner__variant]=&quot;&#39;banner__danger&#39;&quot; [banner__message]=&quot;&#39;Oh dear, what have you done? &lt;a class=&#92;&#39;vf-banner__link&#92;&#39; href=&#92;&#39;JavaScript:Void(0);&#92;&#39;&gt;link example&lt;/a&gt;&#39;&quot;&gt;&lt;/vf-banner&gt;
+                  </code></pre>
+
+        </details>
+    </article>
+
+    <div class="vf-section-header">
+        <h2 class="vf-section-header__heading vf-section-header__heading--is-link" id="vf-banner--success">
+            <a href="#vf-banner--success">Success variant</a>
+            <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+            </svg>
+        </h2>
+    </div>
+
+    <article class="vf-stack vf-stack--lg vf-u-margin__bottom--1200"
+                   style="clear: both; /* insurance against strange components */"
+          >
+
+        <div class="vf-u-padding--400"
+                    style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
+                >
+
+            <vf-banner [banner__variant]="'banner__success'" [banner__dismissible]="false" [banner__message]="'Congratulations! You have made something <a class=\'vf-banner__link\' href=\'JavaScript:Void(0);\'>awesome</a>!'"></vf-banner>
+
+        </div>
+
+        <details class="vf-details vf-box vf-box--outline">
+            <summary class="vf-details--summary">Angular syntax</summary>
+
+            <pre><code>&lt;vf-banner [banner__variant]=&quot;&#39;banner__success&#39;&quot; [banner__dismissible]=&quot;false&quot; [banner__message]=&quot;&#39;Congratulations! You have made something &lt;a class=&#92;&#39;vf-banner__link&#92;&#39; href=&#92;&#39;JavaScript:Void(0);&#92;&#39;&gt;awesome&lt;/a&gt;!&#39;&quot;&gt;&lt;/vf-banner&gt;
+                  </code></pre>
+
+        </details>
+    </article>
+
+    <div class="vf-section-header">
+        <h2 class="vf-section-header__heading vf-section-header__heading--is-link" id="vf-banner--fixed">
+            <a href="#vf-banner--fixed">Fixed variant</a>
+            <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+            </svg>
+        </h2>
+    </div>
+
+    <article class="vf-stack vf-stack--lg vf-u-margin__bottom--1200"
+                   style="clear: both; /* insurance against strange components */"
+          >
+
+        <div class="vf-u-padding--400"
+                    style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
+                >
+
+            <vf-banner [banner__type]="'fixed'" [banner__text]="'I agree, dismiss this banner'"></vf-banner>
+
+        </div>
+
+        <details class="vf-details vf-box vf-box--outline">
+            <summary class="vf-details--summary">Angular syntax</summary>
+
+            <pre><code>For &#39;top&#39; variant - &lt;vf-banner [banner__type]=&quot;&#39;top&#39;&quot; [banner__inline_href]=&quot;&#39;JavaScript:Void(0);&#39;&quot;&gt;&lt;/vf-banner&gt; For &#39;fixed&#39; variant - &lt;vf-banner [banner__type]=&quot;&#39;fixed&#39;&quot; [banner__text]=&quot;&#39;I agree, dismiss this banner&#39;&quot;&gt;&lt;/vf-banner&gt;
+                  </code></pre>
+
+        </details>
+
+    </article>
+
+    <div class="vf-section-header">
+        <h2 class="vf-section-header__heading vf-section-header__heading--is-link" id="vf-banner--top">
+            <a href="#vf-banner--top">Top variant</a>
+            <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+            </svg>
+        </h2>
+    </div>
+
+    <article class="vf-stack vf-stack--lg vf-u-margin__bottom--1200"
+                   style="clear: both; /* insurance against strange components */"
+          >
+
+        <div class="vf-u-padding--400"
+                    style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
+                >
+
+            <vf-banner [banner__type]="'top'" [banner__inline_href]="'JavaScript:Void(0);'"></vf-banner>
+
+        </div>
+
+        <details class="vf-details vf-box vf-box--outline">
+            <summary class="vf-details--summary">Angular syntax</summary>
+
+            <pre><code>For &#39;top&#39; variant - &lt;vf-banner [banner__type]=&quot;&#39;top&#39;&quot; [banner__inline_href]=&quot;&#39;JavaScript:Void(0);&#39;&quot;&gt;&lt;/vf-banner&gt; For &#39;fixed&#39; variant - &lt;vf-banner [banner__type]=&quot;&#39;fixed&#39;&quot; [banner__text]=&quot;&#39;I agree, dismiss this banner&#39;&quot;&gt;&lt;/vf-banner&gt;
+                  </code></pre>
+
+        </details>
+    </article>
+
+    <h2 id="examples" class="vf-text vf-text-heading--1 vf-text--invert">Examples</h2>
+
+    <details class="vf-details">
+        <summary class="vf-details--summary" id="installation">Installation info</summary>
+        <p>This repository is distributed with <a href="https://www.npmjs.com/">npm</a>. After <a href="https://nodejs.org/">installing npm</a>, you can install <code>primer-buttons</code> with this command.</p>
+        <pre><code>$ yarn add --dev @visual-framework/vf-banner
+</code></pre>
+        <h3>Sass/CSS</h3>
+        <p>The style files included are written in <a href="https://sass-lang.com/">Sass</a>. If you're using a VF-core project, you can import it like this:</p>
+        <pre><code>@import &quot;@visual-framework/vf-banner/index.scss&quot;;
+</code></pre>
+        <p>Make sure you import Sass requirements along with the modules. You can use a <a href="https://stable.visual-framework.dev/building/">project boilerplate</a> or the <a href="https://stable.visual-framework.dev/components/vf-sass-starter/">
+                <code>vf-sass-starter</code>
+            </a>
+        </p>
+    </details>
+    <div class="vf-stack vf-stack--custom" style="--vf-stack-margin--custom: .5rem;">
+        <h3>Changelog</h3>
+        <details class="vf-details" id="changelog">
+            <summary class="vf-details--summary">Changelog</summary>
+            <h3>2.0.4</h3>
+            <ul>
+                <li>Dependency update to be compatible with ESM packages<a href="https://github.com/visual-framework/vf-core/issues/2107">Tracking issue</a>
+                </li>
+                <li>Changed: Test cases added for Angular  <a href="https://github.com/visual-framework/vf-core/issues/1932">Tracking issue</a>
+                </li>
+            </ul>
+            <h3>2.0.3</h3>
+            <ul>
+                <li>Dependency update <a href="https://github.com/visual-framework/vf-core/issues/1647">Tracking issue</a>
+                </li>
+            </ul>
+            <h3>2.0.2</h3>
+            <ul>
+                <li>Changelog correction <a href="https://github.com/visual-framework/vf-core/issues/2035">Tracking issue</a>
+                </li>
+            </ul>
+            <h3>2.0.1</h3>
+            <ul>
+                <li>Version bump</li>
+            </ul>
+            <h3>2.0.0</h3>
+            <ul>
+                <li>Version bump</li>
+            </ul>
+            <h3>2.0.0-alpha.2</h3>
+            <ul>
+                <li>Added : React support for Banner component. See README.md for more. <a href="https://github.com/visual-framework/vf-core/issues/1878">Tracking issue</a>
+                </li>
+            </ul>
+            <h3>2.0.0-alpha.1</h3>
+            <ul>
+                <li>Added : Experimental Angular support for fixed and top banner type. See README.md for more.</li>
+            </ul>
+            <h3>2.0.0-alpha.0</h3>
+            <ul>
+                <li>Added : Experimental Angular support for basic and inline banner type. See README.md for more. Support for additional banner types planned for future sprint.</li>
+            </ul>
+            <h3>1.9.2</h3>
+            <ul>
+                <li>Update focus indicators colors to increase contrast ratio and be easier to spot</li>
+            </ul>
+            <h3>1.9.1</h3>
+            <ul>
+                <li>
+                    <code>--inline</code> variant Nunjucks template file cleanup.</li>
+            </ul>
+            <h3>1.9.0</h3>
+            <ul>
+                <li>Correct &quot;tertary&quot; typo in &quot;vf-button--tertiary&quot;.</li>
+                <li>Correct an issue in naming of Yaml keys that resulted in null values.</li>
+                <li>
+                    <code>vf-data-protection-banner__text</code> -&gt; <code>banner__text</code>
+                </li>
+                <li>
+                    <code>vf-data-protection-banner__link</code> -&gt; <code>banner__link</code>
+                </li>
+                <li>
+                    <code>vf-banner--inline_href</code> -&gt; <code>banner__inline_href</code>
+                </li>
+            </ul>
+            <h3>1.8.0</h3>
+            <ul>
+                <li>adds overrides for more permutations of where the vf-global header lives</li>
+            </ul>
+            <h3>1.7.2</h3>
+            <ul>
+                <li>adds deprecation notices around the <code>--phase</code> variant.</li>
+            </ul>
+            <h3>1.7.1</h3>
+            <ul>
+                <li>changes any <code>set-</code> style functions to cleaner version</li>
+            </ul>
+            <h3>1.7.0</h3>
+            <ul>
+                <li>Banner dismiss button now defaults to <code>vf-button--primary</code> (if a specific button variant has been requested by <code>vfJsBannerButtonTheme</code>, it will still be used)</li>
+            </ul>
+            <h3>1.6.3</h3>
+            <ul>
+                <li>Bug: For fixed banners, avoid interpretting numbers as strings and blowing out the page padding</li>
+            </ul>
+            <h3>1.6.2</h3>
+            <ul>
+                <li>JS linting</li>
+            </ul>
+            <h3>1.6.1</h3>
+            <ul>
+                <li>removes CSS for 'inlayed' design as no longer in use</li>
+                <li>https://github.com/visual-framework/vf-core/pull/1204</li>
+            </ul>
+            <h3>1.6.0</h3>
+            <ul>
+                <li>updates spacing design tokens</li>
+                <li>requires <code>v2.0.0</code> of the <code>vf-design-tokens</code> package or newer</li>
+                <li>removes leftover <code>console.log</code>
+                </li>
+            </ul>
+            <h3>1.5.0</h3>
+            <ul>
+                <li>centralises logic to &quot;close&quot; a banner</li>
+                <li>adds padding to the document to accomodate a fixed-position banner so it won't hide content</li>
+            </ul>
+            <ul>
+                <li>https://github.com/visual-framework/vf-core/issues/1119</li>
+            </ul>
+            <h3>1.4.0</h3>
+            <ul>
+                <li>removes inline padding on <code>vf-banner</code> class</li>
+                <li>replaces inline padding on <code>vf-banner__content</code> class</li>
+                <li>removes inline padding from <code>vf-banner__content</code> if parent has <code>vf-u-fullbleed</code> class</li>
+            </ul>
+            <h3>1.2.3</h3>
+            <ul>
+                <li>updates max-width of component</li>
+            </ul>
+            <h3>1.2.2</h3>
+            <ul>
+                <li>updates max-width of component</li>
+            </ul>
+            <h3>1.2.1</h3>
+            <ul>
+                <li>Adds !default to all Sass variables for easier overrideing</li>
+                <li>gives the banner a better look in IE11</li>
+            </ul>
+            <h3>1.2.0</h3>
+            <ul>
+                <li>Makes the alert style banner the default .njk</li>
+                <li>puts the style of alert banner as a prop from yaml/nunjucks</li>
+                <li>removes hardcoded variants of alert banners</li>
+                <li>fixes hover colour of <code>vf-banner__button</code>
+                </li>
+            </ul>
+            <h3>1.1.0</h3>
+            <ul>
+                <li>Adds option to determine button theme using data attributes</li>
+                <li>Allows for existing banners to still use the secondary theme</li>
+            </ul>
+            <h3>1.0.6</h3>
+            <ul>
+                <li>Adds underline on links using <code>.vf-banner__link</code>
+                </li>
+                <li>Resolves IE11 bug assigning classes</li>
+            </ul>
+            <h3>1.0.5</h3>
+            <ul>
+                <li>Add alert <code>--alert</code> and <code>--warning</code> banners</li>
+                <li>Placeholder close button for interactiviy (bring your own JavaScript)</li>
+                <li>
+                    <code>vf-banner--phase</code> is on its way to deprecation, use <code>vf-banner--info</code> instead</li>
+            </ul>
+            <h3>1.0.4</h3>
+            <ul>
+                <li>Makes use of <code>vf-banner__text</code>
+                </li>
+                <li>Use of <code>vf-text</code> is deprecated</li>
+            </ul>
+            <h3>1.0.2</h3>
+            <ul>
+                <li>Links in text areas of banners regain an underline</li>
+            </ul>
+            <h3>1.0.0 (2019-12-17)</h3>
+            <ul>
+                <li>Initial stable release</li>
+            </ul>
+            <h3>1.0.1</h3>
+            <ul>
+                <li>Removed default spacing of <code>vf-text</code> components inside</li>
+                <li>Removes overriding variant CSS that removes padding, as it breaks the GDPR banner</li>
+                <li>The spacing inside the component is now dictated by the component</li>
+                <li>Adds a top and bottom margin for spacing of the <code>--phase</code> variant</li>
+            </ul>
+        </details>
+    </div>
+    <h3>Assets <span id="assets"></span></h3>
+    <ul>
+        <li>
+            <a href="/assets/vf-banner/vf-banner.njk">Nunjucks template</a>
+        </li>
+        <li>
+            <a href="/assets/vf-banner/vf-banner.config.yml">Config</a>
+        </li>
+        <li>
+            <a href="/assets/vf-banner/CHANGELOG.md">CHANGELOG.md</a>
+        </li>
+        <li>
+            <a href="/assets/vf-banner/vf-banner--alerts.scss">vf-banner--alerts.scss</a>
+        </li>
+        <li>
+            <a href="/assets/vf-banner/vf-banner--fixed.scss">vf-banner--fixed.scss</a>
+        </li>
+        <li>
+            <a href="/assets/vf-banner/vf-banner--gdpr.scss">vf-banner--gdpr.scss</a>
+        </li>
+        <li>
+            <a href="/assets/vf-banner/vf-banner--phase.scss">vf-banner--phase.scss</a>
+        </li>
+        <li>
+            <a href="/assets/vf-banner/vf-banner.angular.component.ts">vf-banner.angular.component.ts</a>
+        </li>
+        <li>
+            <a href="/assets/vf-banner/vf-banner.css">vf-banner.css</a>
+        </li>
+        <li>
+            <a href="/assets/vf-banner/vf-banner.js">vf-banner.js</a>
+        </li>
+        <li>
+            <a href="/assets/vf-banner/vf-banner.react.js">vf-banner.react.js</a>
+        </li>
+        <li>
+            <a href="/assets/vf-banner/vf-banner.scss">vf-banner.scss</a>
+        </li>
+        <li>
+            <a href="/assets/vf-banner/vf-banner.variables.scss">vf-banner.variables.scss</a>
+        </li>
+    </ul>
+
+    <hr>
+    <br/>
+    <p class="vf-text-body vf-text-body--4">
+File system location: <code>components/vf-banner</code>
+    </p>
+
+</section>
+
+<p class="vf-text vf-text-body--3">
+      Find an issue on this page?
+      <a class="vf-link" href="https://github.com/visual-framework/vf-core/blob/develop/tools/vf-component-library/src/site/components/component-view.njk">Propose a change</a> or <a href="/guidance/discussing-the-vf" class="vf-link">discuss it</a>.
+    </p>

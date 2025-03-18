@@ -1,0 +1,473 @@
+<section class="vf-content component-library-notes | vf-stack vf-stack--400">
+
+    <!-- no special content -->
+
+    <section class="vf-intro" id="about">
+
+        <div>
+            <!-- empty -->
+        </div>
+
+        <div class="vf-stack">
+
+            <h1 class="vf-intro__heading vf-intro__heading--has-tag">Button
+
+ <a href="/guidance/component-types/" class="vf-badge vf-badge--primary vf-badge--phases">element</a>
+            </h1>
+            <p class="vf-lede">
+                <span>Buttons are clickable elements that trigger an action. They can communicate calls to action, are visually prominent, and allow users to interact with the pages in various ways.</span>
+            </p>
+
+            <p class="vf-intro__text">
+                <a class="vf-link" href="https://github.com/visual-framework/vf-core/tree/develop/components/vf-button"><img src="https://img.shields.io/badge/github-vf--button-blue" alt="github location"/></a>
+                <a class="vf-link" href="https://badge.fury.io/js/%40visual-framework%2Fvf-button"><img src="https://badge.fury.io/js/%40visual-framework%2Fvf-button.svg" alt="npm version"></a>
+            </p>
+        </div>
+    </section>
+
+    <hr class="vf-divider">
+
+    <section class="embl-grid">
+        <div class="vf-section-header">
+            <h2 class="vf-section-header__heading" id="usage"> Usage</h2>
+        </div>
+        <article>
+            <p>The <code>vf-button</code> component can be used with forms on a page and as a prominent 'call to action' link that goes to another page.</p>
+            <h3>When To Use</h3>
+            <p>A button can be used to submit data or take action and as a link to navigate to another page.</p>
+            <p>Use the primary button for the principal call to action on a page or form. Avoid having multiple primary buttons on the same page or form.</p>
+            <p>Use secondary buttons for secondary calls to action. Pages with too many prominent calls to action <a href="https://design-system.service.gov.uk/components/button/">make it hard for users to know what to do next</a>. Before adding lots of secondary buttons, try to simplify the page or break the content down across multiple pages.</p>
+            <p>Tertiary buttons can be used for less prominent actions. Consider using a link instead of a button to send users to another page, if this action is not very important.</p>
+            <p>As the <code>vf-button</code> is relatively large, depending on the context, you may wish to use the <code>vf-button--small</code> variant instead.</p>
+            <h4>Alignment</h4>
+            <p>As a general rule, the <code>vf-button</code> should be left aligned on the page and when used inside a larger component.</p>
+            <p>When used in conjunction with a single form input, as in <a href="https://stable.visual-framework.dev/components/vf-search/">the vf-search component</a>, the <code>vf-button</code> needs to be inline with the input and to the right of it.</p>
+            <p>When a <code>vf-button</code> is used in a banner (e.g. to accept cookies) it needs to follow the content and be right aligned.</p>
+            <h3>When Not To Use</h3>
+            <p>If using the <code>vf-button</code> as a link do not use it to link to content on the same page. Use the <a href="/components/vf-link-list/#vf-link-list--easy">
+                    <code>vf-link-list</code>
+                </a> component instead.</p>
+            <h3>Label</h3>
+            <p>Write button text in <a href="https://blog.prototypr.io/sentence-case-or-title-case-5bd581f05d88">sentence case</a>, describing the action it performs. For example:</p>
+            <ul>
+                <li>‘Apply now’ to apply for a job.</li>
+                <li>‘Create account’ to create an account.</li>
+                <li>‘Sign in’ to an account that a user has already created.</li>
+                <li>‘Save and continue’ when pressing the button will save the information that the user has entered.</li>
+            </ul>
+            <p>Try to keep the text on the button short and clear.</p>
+            <h3>Related documentation</h3>
+            <p>The guidelines on buttons in <a href="https://design-system.service.gov.uk/components/button/">the GOV.UK Design System</a> and <a href="https://www.carbondesignsystem.com/components/button/usage/">the Carbon Design System</a> include additional advice on when and how to use buttons.</p>
+            <h3>Angular</h3>
+            <p>Latest Angular package (3.0.0-alpha.0) was generated with Angular version 15.2.0 and has been tested on application with Angular version 15.2.0.</p>
+            <ol>
+                <li>install <code>yarn add @visual-framework/vf-button</code>
+                </li>
+                <li>import in your app.module<pre><code>import {{ '{' }} VfButtonAngularModule {{ '}' }} from '@visual-framework/vf-button/vf-button.angular';
+
+@NgModule({{ '{' }}
+  imports: [VfButtonAngularModule, YourOtherModules],
+  ...
+{{ '}' }})
+</code></pre>
+                </li>
+                <li>can be used as<pre><code>&lt;vf-button [text]=&quot;'Primary Button'&quot; [theme]=&quot;'primary'&quot;&gt;&lt;/vf-button&gt;
+</code></pre>
+                </li>
+                <li>add to your styles.scss<pre><code>@import '../node_modules/@visual-framework/vf-sass-config/index.scss';
+@import &quot;../node_modules/@visual-framework/vf-button/vf-button.scss&quot;;
+</code></pre>
+(you should also make use of <a href="https://stable.visual-framework.dev/components/vf-sass-starter">vf-sass-starter</a>)</li>
+            </ol>
+            <p>Depending on the success of this method, we plan to add standardized guidance to the component library and component generator.</p>
+            <p>Usage:</p>
+            <pre><code>&lt;vf-button [text]=&quot;'Primary Button'&quot; [theme]=&quot;'primary'&quot;&gt;&lt;/vf-button&gt;
+</code></pre>
+
+        </article>
+    </section>
+    <hr class="vf-divider">
+    <h2 id="variants" class="vf-text vf-text-heading--1 vf-text--invert">Variants</h2>
+
+    <div class="vf-section-header">
+        <h2 class="vf-section-header__heading vf-section-header__heading--is-link" id="vf-button--primary">
+            <a href="#vf-button--primary">Primary variant</a>
+            <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+            </svg>
+        </h2>
+    </div>
+
+    <article class="vf-stack vf-stack--lg vf-u-margin__bottom--1200"
+                   style="clear: both; /* insurance against strange components */"
+          >
+
+        <section class="vf-grid vf-grid__col-3">
+            <div>
+                <!--empty-->
+            </div>
+
+            <div class="vf-u-padding--400"
+                    style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
+                >
+
+                <vf-button [text]="'Primary Button'" [theme]="'primary'"></vf-button>
+
+            </div>
+
+            <div>
+                <!--empty-->
+            </div>
+        </section>
+
+        <details class="vf-details vf-box vf-box--outline">
+            <summary class="vf-details--summary">Angular syntax</summary>
+
+            <pre><code>&lt;vf-button [text]=&quot;&#39;Primary Button&#39;&quot; [theme]=&quot;&#39;primary&#39;&quot;&gt;&lt;/vf-button&gt;
+                  </code></pre>
+
+        </details>
+    </article>
+
+    <div class="vf-section-header">
+        <h2 class="vf-section-header__heading vf-section-header__heading--is-link" id="vf-button--secondary">
+            <a href="#vf-button--secondary">Secondary variant</a>
+            <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+            </svg>
+        </h2>
+    </div>
+
+    <article class="vf-stack vf-stack--lg vf-u-margin__bottom--1200"
+                   style="clear: both; /* insurance against strange components */"
+          >
+
+        <section class="vf-grid vf-grid__col-3">
+            <div>
+                <!--empty-->
+            </div>
+
+            <div class="vf-u-padding--400"
+                    style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
+                >
+
+                <vf-button [text]="'Secondary Button'" [theme]="'secondary'"></vf-button>
+
+            </div>
+
+            <div>
+                <!--empty-->
+            </div>
+        </section>
+
+        <details class="vf-details vf-box vf-box--outline">
+            <summary class="vf-details--summary">Angular syntax</summary>
+
+            <pre><code>&lt;vf-button [text]=&quot;&#39;Secondary Button&#39;&quot; [theme]=&quot;&#39;secondary&#39;&quot;&gt;&lt;/vf-button&gt;
+                  </code></pre>
+
+        </details>
+    </article>
+
+    <div class="vf-section-header">
+        <h2 class="vf-section-header__heading vf-section-header__heading--is-link" id="vf-button--tertiary">
+            <a href="#vf-button--tertiary">Tertiary variant</a>
+            <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+            </svg>
+        </h2>
+    </div>
+
+    <article class="vf-stack vf-stack--lg vf-u-margin__bottom--1200"
+                   style="clear: both; /* insurance against strange components */"
+          >
+
+        <section class="vf-grid vf-grid__col-3">
+            <div>
+                <!--empty-->
+            </div>
+
+            <div class="vf-u-padding--400"
+                    style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
+                >
+
+                <vf-button [text]="'Tertiary Button'" [theme]="'tertiary'"></vf-button>
+
+            </div>
+
+            <div>
+                <!--empty-->
+            </div>
+        </section>
+
+        <details class="vf-details vf-box vf-box--outline">
+            <summary class="vf-details--summary">Angular syntax</summary>
+
+            <pre><code>&lt;vf-button [text]=&quot;&#39;Tertiary Button&#39;&quot; [theme]=&quot;&#39;tertiary&#39;&quot;&gt;&lt;/vf-button&gt;
+                  </code></pre>
+
+        </details>
+    </article>
+
+    <div class="vf-section-header">
+        <h2 class="vf-section-header__heading vf-section-header__heading--is-link" id="vf-button--small">
+            <a href="#vf-button--small">Small variant</a>
+            <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+            </svg>
+        </h2>
+    </div>
+
+    <article class="vf-stack vf-stack--lg vf-u-margin__bottom--1200"
+                   style="clear: both; /* insurance against strange components */"
+          >
+
+        <section class="vf-grid vf-grid__col-3">
+            <div>
+                <!--empty-->
+            </div>
+
+            <div class="vf-u-padding--400"
+                    style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
+                >
+
+                <vf-button [text]="'Small Button'" [theme]="'primary'" size="sm"></vf-button>
+
+            </div>
+
+            <div>
+                <!--empty-->
+            </div>
+        </section>
+
+        <details class="vf-details vf-box vf-box--outline">
+            <summary class="vf-details--summary">Angular syntax</summary>
+
+            <pre><code>&lt;vf-button [text]=&quot;&#39;Small Button&#39;&quot; [theme]=&quot;&#39;primary&#39;&quot; size=&quot;sm&quot;&gt;&lt;/vf-button&gt;
+                  </code></pre>
+
+        </details>
+    </article>
+
+    <div class="vf-section-header">
+        <h2 class="vf-section-header__heading vf-section-header__heading--is-link" id="vf-button--link">
+            <a href="#vf-button--link">Link variant</a>
+            <svg aria-hidden="true" class="vf-section-header__icon | vf-icon vf-icon-arrow--inline-end" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0C5.376.008.008 5.376 0 12zm13.707-5.209l4.5 4.5a1 1 0 010 1.414l-4.5 4.5a1 1 0 01-1.414-1.414l2.366-2.367a.25.25 0 00-.177-.424H6a1 1 0 010-2h8.482a.25.25 0 00.177-.427l-2.366-2.368a1 1 0 011.414-1.414z" fill="" fill-rule="nonzero"></path>
+            </svg>
+        </h2>
+    </div>
+
+    <article class="vf-stack vf-stack--lg vf-u-margin__bottom--1200"
+                   style="clear: both; /* insurance against strange components */"
+          >
+
+        <section class="vf-grid vf-grid__col-3">
+            <div>
+                <!--empty-->
+            </div>
+
+            <div class="vf-u-padding--400"
+                    style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
+                >
+
+                <vf-button [text]="'Link'" [theme]="'link'"></vf-button>
+
+            </div>
+
+            <div>
+                <!--empty-->
+            </div>
+        </section>
+
+        <details class="vf-details vf-box vf-box--outline">
+            <summary class="vf-details--summary">Angular syntax</summary>
+
+            <pre><code>&lt;vf-button [text]=&quot;&#39;a link variant&#39;&quot; [theme]=&quot;&#39;link&#39;&quot;&gt;&lt;/vf-button&gt;
+                  </code></pre>
+
+        </details>
+    </article>
+    <hr class="vf-divider">
+    <h2 id="examples" class="vf-text vf-text-heading--1 vf-text--invert">Examples</h2>
+
+    <section class="vf-grid vf-grid__col-3"></section>
+
+    <details class="vf-details">
+        <summary class="vf-details--summary" id="installation">Installation info</summary>
+        <p>This component is distributed with npm. After <a href="https://www.npmjs.com/get-npm">installing npm</a>, you can install the <code>vf-button</code> with this command.</p>
+        <pre><code>$ yarn add --dev @visual-framework/vf-button
+</code></pre>
+        <h3>Sass/CSS</h3>
+        <p>The source files included are written in <a href="http://sass-lang.com">Sass</a>(<code>scss</code>). You can point your Sass <code>include-path</code> at your <code>node_modules</code> directory and import it like this.</p>
+        <pre><code>@import &quot;@visual-framework/vf-button/index.scss&quot;;
+</code></pre>
+        <p>Make sure you import Sass requirements along with the modules. You can use a <a href="https://stable.visual-framework.dev/building/">project boilerplate</a> or the <a href="https://stable.visual-framework.dev/components/vf-sass-starter/">
+                <code>vf-sass-starter</code>
+            </a>
+        </p>
+    </details>
+    <div class="vf-stack vf-stack--custom" style="--vf-stack-margin--custom: .5rem;">
+        <h3>Changelog</h3>
+        <details class="vf-details" id="changelog">
+            <summary class="vf-details--summary">Changelog</summary>
+            <h3>3.0.2</h3>
+            <ul>
+                <li>Changed: Test cases added for Angular  <a href="https://github.com/visual-framework/vf-core/issues/1932">Tracking issue</a>
+                </li>
+                <li>Dependency update to be compatible with ESM packages<a href="https://github.com/visual-framework/vf-core/issues/2107">Tracking issue</a>
+                </li>
+            </ul>
+            <h3>3.0.1</h3>
+            <ul>
+                <li>Dependency update <a href="https://github.com/visual-framework/vf-core/issues/1647">Tracking issue</a>
+                </li>
+            </ul>
+            <h3>3.0.0-alpha.0</h3>
+            <ul>
+                <li>Changed : Angular support for Button  component as a standalone package. See README.md for more.</li>
+            </ul>
+            <h3>2.0.0-alpha.6</h3>
+            <ul>
+                <li>Changes the link variant to be a button element</li>
+            </ul>
+            <h3>2.0.0-alpha.5</h3>
+            <ul>
+                <li>Readme formatting fixes.</li>
+            </ul>
+            <h3>2.0.0-alpha.4</h3>
+            <ul>
+                <li>Style import fixes for experimental angular support.</li>
+            </ul>
+            <h3>2.0.0-alpha.3</h3>
+            <ul>
+                <li>Fixes for experimental angular support.</li>
+            </ul>
+            <h3>2.0.0-alpha.2</h3>
+            <ul>
+                <li>Adds experimental angular support. See README.md for more.</li>
+            </ul>
+            <h3>2.0.0-alpha.1</h3>
+            <ul>
+                <li>Requires at least <code>@visual-framework@vf-sass-config@2.6.1</code>.</li>
+                <li>Ensure no colour is set with revised <code>set-type</code> mixin.</li>
+                <li>https://github.com/visual-framework/vf-core/pull/1606</li>
+            </ul>
+            <h3>2.0.0-alpha.0</h3>
+            <ul>
+                <li>removes deprecated code</li>
+                <li>turns the primary, secondary, tertiary into actual things - rather than aliases.</li>
+            </ul>
+            <h4>Migration Instructions</h4>
+            <ul>
+                <li>If you were using the &quot;Outline Primary&quot; variant you should use the &quot;Secondary&quot; variant now.</li>
+                <li>This replaces the classes of vf-button--primary and vf-button--outline with vf-badge--secondary.</li>
+            </ul>
+            <h3>1.4.4</h3>
+            <ul>
+                <li>Added <code>link</code> theme button variant. This variant is similar to link style.</li>
+            </ul>
+            <h3>1.4.3</h3>
+            <ul>
+                <li>Added react implementation of button</li>
+                <li>https://github.com/visual-framework/vf-core/pull/1416</li>
+                <li>(Experimental) React documentation: https://visual-framework.github.io/vf-react/#/components-showcase</li>
+            </ul>
+            <h3>1.4.1</h3>
+            <ul>
+                <li>changes any <code>set-</code> style functions to cleaner version</li>
+            </ul>
+            <h3>1.4.0</h3>
+            <ul>
+                <li>Removes variants that are not to be used from the examples available.</li>
+                <li>Adds usage documentation.</li>
+            </ul>
+            <h3>1.3.1</h3>
+            <ul>
+                <li>React: Use react-dom-fragment to return HTML fragments.</li>
+                <li>https://github.com/visual-framework/vf-core/pull/1291</li>
+            </ul>
+            <h3>1.3.0</h3>
+            <ul>
+                <li>adds react support</li>
+                <li>https://github.com/visual-framework/vf-core/pull/1278</li>
+            </ul>
+            <h3>1.2.0</h3>
+            <ul>
+                <li>updates spacing design tokens</li>
+                <li>requires <code>v2.0.0</code> of the <code>vf-design-tokens</code> package or newer</li>
+            </ul>
+            <h3>1.1.2</h3>
+            <ul>
+                <li>adds <code>webkit-appearance: none;</code> as needed for Safari browsers as autoprefixer is not doing this</li>
+            </ul>
+            <h3>1.1.1</h3>
+            <ul>
+                <li>removes the <code>:hover</code> text color rule so that it doesn't to white on hover</li>
+            </ul>
+            <h3>1.1.0</h3>
+            <ul>
+                <li>makes theme variant naming and decisions consistent</li>
+            </ul>
+            <h3>1.0.4</h3>
+            <ul>
+                <li>makes it work as an include as well as render</li>
+                <li>fixes bug with using the button aesthetic as a link</li>
+            </ul>
+            <h3>1.0.3</h3>
+            <ul>
+                <li>adds :focus styles to vf-button--outline</li>
+            </ul>
+            <ul>
+                <li>https://github.com/visual-framework/vf-core/pull/857</li>
+            </ul>
+            <h3>1.0.1</h3>
+            <ul>
+                <li>Button colours corrected for browsers that don't support CSS custom properties (IE)</li>
+            </ul>
+            <h3>1.0.0 (2019-12-17)</h3>
+            <ul>
+                <li>Initial stable release</li>
+            </ul>
+        </details>
+    </div>
+    <h3>Assets <span id="assets"></span></h3>
+    <ul>
+        <li>
+            <a href="/assets/vf-button/vf-button.njk">Nunjucks template</a>
+        </li>
+        <li>
+            <a href="/assets/vf-button/vf-button.config.yml">Config</a>
+        </li>
+        <li>
+            <a href="/assets/vf-button/CHANGELOG.md">CHANGELOG.md</a>
+        </li>
+        <li>
+            <a href="/assets/vf-button/vf-button.angular.component.spec.ts">vf-button.angular.component.spec.ts</a>
+        </li>
+        <li>
+            <a href="/assets/vf-button/vf-button.angular.component.ts">vf-button.angular.component.ts</a>
+        </li>
+        <li>
+            <a href="/assets/vf-button/vf-button.css">vf-button.css</a>
+        </li>
+        <li>
+            <a href="/assets/vf-button/vf-button.react.js">vf-button.react.js</a>
+        </li>
+        <li>
+            <a href="/assets/vf-button/vf-button.scss">vf-button.scss</a>
+        </li>
+    </ul>
+
+    <hr>
+    <br/>
+    <p class="vf-text-body vf-text-body--4">
+File system location: <code>components/vf-button</code>
+    </p>
+
+</section>
+
+<p class="vf-text vf-text-body--3">
+      Find an issue on this page?
+      <a class="vf-link" href="https://github.com/visual-framework/vf-core/blob/develop/tools/vf-component-library/src/site/components/component-view.njk">Propose a change</a> or <a href="/guidance/discussing-the-vf" class="vf-link">discuss it</a>.
+    </p>
