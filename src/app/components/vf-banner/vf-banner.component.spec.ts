@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { VfBannerAngularComponent } from './vf-banner.component';
+import { VfBannerAngularComponent } from '@visual-framework/vf-banner/vf-banner.angular';
 
 declare global {
   interface Window {

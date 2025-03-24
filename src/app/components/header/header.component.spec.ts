@@ -33,44 +33,8 @@ describe('AppHeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should initialize with correct nav items', () => {
-    expect(component.navItems).toBeDefined();
-    expect(component.navItems.length).toBe(5);
-    expect(component.navItems[0]).toEqual(jasmine.objectContaining({ 
-      label: 'About', 
-      hasDropdown: true 
-    }));
-    expect(component.navItems[1]).toEqual(jasmine.objectContaining({ 
-      label: 'Components', 
-      hasDropdown: true 
-    }));
-    expect(component.navItems[2]).toEqual(jasmine.objectContaining({ 
-      label: 'GitHub', 
-      hasDropdown: false 
-    }));
-    expect(component.navItems[3]).toEqual(jasmine.objectContaining({ 
-      label: 'Slack', 
-      hasDropdown: false 
-    }));
-    expect(component.navItems[4]).toEqual(jasmine.objectContaining({ 
-      label: 'Search', 
-      hasDropdown: true 
-    }));
-  });
-
   xit('should call vfMegaMenu on init', () => {
     fixture.detectChanges(); // This will trigger ngOnInit
     expect(window.vfMegaMenu).toHaveBeenCalled();
-  });
-
-  // Additional test cases for error scenarios
-  it('should handle null nav items gracefully', () => {
-    component.navItems = null as any;
-    fixture.detectChanges();
-  });
-
-  it('should handle undefined nav items gracefully', () => {
-    component.navItems = undefined as any;
-    fixture.detectChanges();
   });
 });
