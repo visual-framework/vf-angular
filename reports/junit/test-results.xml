@@ -1,87 +1,87 @@
 <?xml version="1.0"?>
-<testsuite name="Chrome Headless 134.0.0.0 (Mac OS 10.15.7)" package="" timestamp="2025-03-18T06:35:31" id="0" hostname="C02YH1F9JGH6" tests="64" errors="0" failures="0" time="0.23">
+<testsuite name="Chrome Headless 134.0.0.0 (Mac OS 10.15.7)" package="" timestamp="2025-03-18T10:14:05" id="0" hostname="C02YH1F9JGH6" tests="64" errors="0" failures="0" time="0.222">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36"/>
   </properties>
-  <testcase name="VfButtonAngularComponent should set class based on theme input" time="0.024" classname="VfButtonAngularComponent"/>
-  <testcase name="VfButtonAngularComponent should set class based on style input" time="0.003" classname="VfButtonAngularComponent"/>
-  <testcase name="VfButtonAngularComponent should set class based on size input" time="0.002" classname="VfButtonAngularComponent"/>
-  <testcase name="VfButtonAngularComponent should set class based on override_class input" time="0.002" classname="VfButtonAngularComponent"/>
-  <testcase name="VfButtonAngularComponent should update class when multiple inputs are provided" time="0.003" classname="VfButtonAngularComponent"/>
-  <testcase name="VfButtonAngularComponent should set id attribute if id input is provided" time="0.002" classname="VfButtonAngularComponent"/>
-  <testcase name="VfButtonAngularComponent should create" time="0.002" classname="VfButtonAngularComponent"/>
-  <testcase name="VfButtonAngularComponent should not set id attribute if id input is not provided" time="0.002" classname="VfButtonAngularComponent"/>
-  <testcase name="VfButtonAngularComponent should set content based on html input" time="0.002" classname="VfButtonAngularComponent"/>
-  <testcase name="VfButtonAngularComponent should update content and class when inputs change" time="0.003" classname="VfButtonAngularComponent"/>
-  <testcase name="VfButtonAngularComponent should set content based on text input if html is empty" time="0.001" classname="VfButtonAngularComponent"/>
-  <testcase name="VfBlockquoteAngularComponent should set the correct author image class based on modifier" time="0.029" classname="VfBlockquoteAngularComponent"/>
-  <testcase name="VfBlockquoteAngularComponent should render the author details if blockquote_author_details is provided" time="0.003" classname="VfBlockquoteAngularComponent"/>
-  <testcase name="VfBlockquoteAngularComponent should set the correct quote based on blockquote_text, html, and text" time="0.002" classname="VfBlockquoteAngularComponent"/>
-  <testcase name="VfBlockquoteAngularComponent should set the correct class based on modifier and override_class" time="0.002" classname="VfBlockquoteAngularComponent"/>
-  <testcase name="VfBlockquoteAngularComponent should render the blockquote with the correct id and class" time="0.003" classname="VfBlockquoteAngularComponent"/>
-  <testcase name="VfBlockquoteAngularComponent should create" time="0.002" classname="VfBlockquoteAngularComponent"/>
-  <testcase name="VfBlockquoteAngularComponent should render the author link if blockquote_author_href is provided" time="0.003" classname="VfBlockquoteAngularComponent"/>
-  <testcase name="VfBlockquoteAngularComponent should render the author image if blockquote_author_imageurl is provided" time="0.002" classname="VfBlockquoteAngularComponent"/>
-  <testcase name="VfTabsAngularComponent should show tab content on click of tab" time="0.007" classname="VfTabsAngularComponent"/>
-  <testcase name="VfTabsAngularComponent should sanitize HTML content" time="0.002" classname="VfTabsAngularComponent"/>
-  <testcase name="VfTabsAngularComponent should detect changes on ngAfterViewInit" time="0" classname="VfTabsAngularComponent">
+  <testcase name="should display provided text" time="0.037" classname="VfBackToTopAngularComponent"/>
+  <testcase name="should display default text when no input text is provided" time="0.004" classname="VfBackToTopAngularComponent"/>
+  <testcase name="should set vf-back-top--floating attribute when type is floating" time="0.002" classname="VfBackToTopAngularComponent"/>
+  <testcase name="should set href attribute correctly when scrollToId is provided" time="0.001" classname="VfBackToTopAngularComponent"/>
+  <testcase name="should create" time="0.002" classname="VfBackToTopAngularComponent"/>
+  <testcase name="should not set vf-back-top--floating attribute when type is not floating" time="0.002" classname="VfBackToTopAngularComponent"/>
+  <testcase name="should set class based on theme input" time="0.008" classname="VfBadgeAngularComponent"/>
+  <testcase name="should render a link if badge_href is provided" time="0.003" classname="VfBadgeAngularComponent"/>
+  <testcase name="should set content based on text input if html is empty" time="0.003" classname="VfBadgeAngularComponent"/>
+  <testcase name="should render a span if badge_href is not provided" time="0.002" classname="VfBadgeAngularComponent"/>
+  <testcase name="should set class based on style input" time="0.002" classname="VfBadgeAngularComponent"/>
+  <testcase name="should set class based on override_class input" time="0.001" classname="VfBadgeAngularComponent"/>
+  <testcase name="should set id attribute in anchor tag if id input is provided" time="0.003" classname="VfBadgeAngularComponent"/>
+  <testcase name="should set content based on html input" time="0.002" classname="VfBadgeAngularComponent"/>
+  <testcase name="should set id attribute in span tag if id input is provided" time="0.002" classname="VfBadgeAngularComponent"/>
+  <testcase name="should create" time="0.002" classname="VfBadgeAngularComponent"/>
+  <testcase name="should render the author image if blockquote_author_imageurl is provided" time="0.008" classname="VfBlockquoteAngularComponent"/>
+  <testcase name="should set the correct author image class based on modifier" time="0.001" classname="VfBlockquoteAngularComponent"/>
+  <testcase name="should set the correct quote based on blockquote_text, html, and text" time="0.001" classname="VfBlockquoteAngularComponent"/>
+  <testcase name="should render the author details if blockquote_author_details is provided" time="0.002" classname="VfBlockquoteAngularComponent"/>
+  <testcase name="should create" time="0.002" classname="VfBlockquoteAngularComponent"/>
+  <testcase name="should render the blockquote with the correct id and class" time="0.002" classname="VfBlockquoteAngularComponent"/>
+  <testcase name="should render the author link if blockquote_author_href is provided" time="0.002" classname="VfBlockquoteAngularComponent"/>
+  <testcase name="should set the correct class based on modifier and override_class" time="0.002" classname="VfBlockquoteAngularComponent"/>
+  <testcase name="should show tab content on click of tab" time="0.006" classname="VfTabsAngularComponent"/>
+  <testcase name="should create" time="0.001" classname="VfTabsAngularComponent"/>
+  <testcase name="should sanitize HTML content" time="0.002" classname="VfTabsAngularComponent"/>
+  <testcase name="should call vfTabs on ngAfterViewInit" time="0" classname="VfTabsAngularComponent">
     <skipped/>
   </testcase>
-  <testcase name="VfTabsAngularComponent should call vfTabs on ngAfterViewInit" time="0" classname="VfTabsAngularComponent">
+  <testcase name="should detect changes on ngAfterViewInit" time="0" classname="VfTabsAngularComponent">
     <skipped/>
   </testcase>
-  <testcase name="VfTabsAngularComponent should set tabs data on ngOnChanges" time="0.002" classname="VfTabsAngularComponent"/>
-  <testcase name="VfTabsAngularComponent should create" time="0.001" classname="VfTabsAngularComponent"/>
-  <testcase name="VfBadgeAngularComponent should render a span if badge_href is not provided" time="0.004" classname="VfBadgeAngularComponent"/>
-  <testcase name="VfBadgeAngularComponent should render a link if badge_href is provided" time="0.002" classname="VfBadgeAngularComponent"/>
-  <testcase name="VfBadgeAngularComponent should set content based on text input if html is empty" time="0.001" classname="VfBadgeAngularComponent"/>
-  <testcase name="VfBadgeAngularComponent should set class based on override_class input" time="0.002" classname="VfBadgeAngularComponent"/>
-  <testcase name="VfBadgeAngularComponent should set class based on theme input" time="0.001" classname="VfBadgeAngularComponent"/>
-  <testcase name="VfBadgeAngularComponent should set id attribute in anchor tag if id input is provided" time="0.001" classname="VfBadgeAngularComponent"/>
-  <testcase name="VfBadgeAngularComponent should set content based on html input" time="0.002" classname="VfBadgeAngularComponent"/>
-  <testcase name="VfBadgeAngularComponent should set id attribute in span tag if id input is provided" time="0.001" classname="VfBadgeAngularComponent"/>
-  <testcase name="VfBadgeAngularComponent should set class based on style input" time="0.002" classname="VfBadgeAngularComponent"/>
-  <testcase name="VfBadgeAngularComponent should create" time="0.001" classname="VfBadgeAngularComponent"/>
-  <testcase name="VfHeroAngularComponent should display vf_hero_link when href and text are provided" time="0.007" classname="VfHeroAngularComponent"/>
-  <testcase name="VfHeroAngularComponent should display vf_hero_heading with link when href is provided" time="0.003" classname="VfHeroAngularComponent"/>
-  <testcase name="VfHeroAngularComponent should display vf_hero_subheading when provided" time="0.002" classname="VfHeroAngularComponent"/>
-  <testcase name="VfHeroAngularComponent should set class and style based on inputs" time="0.002" classname="VfHeroAngularComponent"/>
-  <testcase name="VfHeroAngularComponent should display vf_hero_text elements when provided" time="0.003" classname="VfHeroAngularComponent"/>
-  <testcase name="VfHeroAngularComponent should display vf_hero_kicker when provided" time="0.001" classname="VfHeroAngularComponent"/>
-  <testcase name="VfHeroAngularComponent should create" time="0.001" classname="VfHeroAngularComponent"/>
-  <testcase name="VfBannerAngularComponent should display top banner with correct attributes" time="0.008" classname="VfBannerAngularComponent"/>
-  <testcase name="VfBannerAngularComponent should create" time="0.002" classname="VfBannerAngularComponent"/>
-  <testcase name="VfBannerAngularComponent should set banner class based on variant" time="0.002" classname="VfBannerAngularComponent"/>
-  <testcase name="VfBannerAngularComponent should display basic banner" time="0.002" classname="VfBannerAngularComponent"/>
-  <testcase name="VfBannerAngularComponent should call vfBanner for fixed and top types" time="0" classname="VfBannerAngularComponent">
+  <testcase name="should set tabs data on ngOnChanges" time="0.002" classname="VfTabsAngularComponent"/>
+  <testcase name="should call vfBanner for fixed and top types" time="0" classname="VfBannerAngularComponent">
     <skipped/>
   </testcase>
-  <testcase name="VfBannerAngularComponent should display fixed banner with correct attributes" time="0.002" classname="VfBannerAngularComponent"/>
-  <testcase name="VfBannerAngularComponent should display inline banner with link" time="0.002" classname="VfBannerAngularComponent"/>
-  <testcase name="AppHeaderComponent should create" time="0.029" classname="AppHeaderComponent"/>
-  <testcase name="AppHeaderComponent should handle null nav items gracefully" time="0.008" classname="AppHeaderComponent"/>
-  <testcase name="AppHeaderComponent should handle undefined nav items gracefully" time="0.005" classname="AppHeaderComponent"/>
-  <testcase name="AppHeaderComponent should call vfMegaMenu on init" time="0" classname="AppHeaderComponent">
+  <testcase name="should display basic banner" time="0.008" classname="VfBannerAngularComponent"/>
+  <testcase name="should create" time="0.001" classname="VfBannerAngularComponent"/>
+  <testcase name="should display top banner with correct attributes" time="0.002" classname="VfBannerAngularComponent"/>
+  <testcase name="should display fixed banner with correct attributes" time="0.002" classname="VfBannerAngularComponent"/>
+  <testcase name="should display inline banner with link" time="0.002" classname="VfBannerAngularComponent"/>
+  <testcase name="should set banner class based on variant" time="0.002" classname="VfBannerAngularComponent"/>
+  <testcase name="should handle empty input" time="0.001" classname="HyphenateLowercasePipe"/>
+  <testcase name="should transform text to lowercase with hyphens" time="0" classname="HyphenateLowercasePipe"/>
+  <testcase name="create an instance" time="0" classname="HyphenateLowercasePipe"/>
+  <testcase name="should initialize with correct nav items" time="0.028" classname="AppHeaderComponent"/>
+  <testcase name="should create" time="0.005" classname="AppHeaderComponent"/>
+  <testcase name="should handle undefined nav items gracefully" time="0.007" classname="AppHeaderComponent"/>
+  <testcase name="should handle null nav items gracefully" time="0.005" classname="AppHeaderComponent"/>
+  <testcase name="should call vfMegaMenu on init" time="0" classname="AppHeaderComponent">
     <skipped/>
   </testcase>
-  <testcase name="AppHeaderComponent should initialize with correct nav items" time="0.004" classname="AppHeaderComponent"/>
-  <testcase name="VfBackToTopAngularComponent should create" time="0.004" classname="VfBackToTopAngularComponent"/>
-  <testcase name="VfBackToTopAngularComponent should set vf-back-top--floating attribute when type is floating" time="0.001" classname="VfBackToTopAngularComponent"/>
-  <testcase name="VfBackToTopAngularComponent should not set vf-back-top--floating attribute when type is not floating" time="0.002" classname="VfBackToTopAngularComponent"/>
-  <testcase name="VfBackToTopAngularComponent should set href attribute correctly when scrollToId is provided" time="0.001" classname="VfBackToTopAngularComponent"/>
-  <testcase name="VfBackToTopAngularComponent should display default text when no input text is provided" time="0.001" classname="VfBackToTopAngularComponent"/>
-  <testcase name="VfBackToTopAngularComponent should display provided text" time="0.001" classname="VfBackToTopAngularComponent"/>
-  <testcase name="HomeComponent should create" time="0.016" classname="HomeComponent"/>
-  <testcase name="HyphenateLowercasePipe should handle empty input" time="0" classname="HyphenateLowercasePipe"/>
-  <testcase name="HyphenateLowercasePipe create an instance" time="0" classname="HyphenateLowercasePipe"/>
-  <testcase name="HyphenateLowercasePipe should transform text to lowercase with hyphens" time="0" classname="HyphenateLowercasePipe"/>
+  <testcase name="should create" time="0.015" classname="HomeComponent"/>
+  <testcase name="should update class when multiple inputs are provided" time="0.002" classname="VfButtonAngularComponent"/>
+  <testcase name="should set class based on style input" time="0.002" classname="VfButtonAngularComponent"/>
+  <testcase name="should set class based on theme input" time="0.002" classname="VfButtonAngularComponent"/>
+  <testcase name="should set content based on html input" time="0.003" classname="VfButtonAngularComponent"/>
+  <testcase name="should set id attribute if id input is provided" time="0.002" classname="VfButtonAngularComponent"/>
+  <testcase name="should set content based on text input if html is empty" time="0.002" classname="VfButtonAngularComponent"/>
+  <testcase name="should set class based on size input" time="0.002" classname="VfButtonAngularComponent"/>
+  <testcase name="should not set id attribute if id input is not provided" time="0.001" classname="VfButtonAngularComponent"/>
+  <testcase name="should create" time="0.002" classname="VfButtonAngularComponent"/>
+  <testcase name="should set class based on override_class input" time="0.002" classname="VfButtonAngularComponent"/>
+  <testcase name="should update content and class when inputs change" time="0.001" classname="VfButtonAngularComponent"/>
+  <testcase name="should display vf_hero_text elements when provided" time="0.007" classname="VfHeroAngularComponent"/>
+  <testcase name="should display vf_hero_kicker when provided" time="0.002" classname="VfHeroAngularComponent"/>
+  <testcase name="should display vf_hero_heading with link when href is provided" time="0.002" classname="VfHeroAngularComponent"/>
+  <testcase name="should create" time="0.001" classname="VfHeroAngularComponent"/>
+  <testcase name="should display vf_hero_link when href and text are provided" time="0.002" classname="VfHeroAngularComponent"/>
+  <testcase name="should display vf_hero_subheading when provided" time="0.001" classname="VfHeroAngularComponent"/>
+  <testcase name="should set class and style based on inputs" time="0.001" classname="VfHeroAngularComponent"/>
   <system-out>
-    <![CDATA[Chrome Headless 134.0.0.0 (Mac OS 10.15.7) LOG: null
-,Chrome Headless 134.0.0.0 (Mac OS 10.15.7) LOG: <div id="root28" ng-version="16.2.12"><a class="vf-badge" href="http://example.com" id="test-id-a"></a><!--bindings={
+    <![CDATA[Chrome Headless 134.0.0.0 (Mac OS 10.15.7) LOG: <div id="root12" ng-version="16.2.12"><a class="vf-badge" href="http://example.com" id="test-id-a"></a><!--bindings={
   "ng-reflect-ng-if": "true"
 }--><!--bindings={
   "ng-reflect-ng-if": "false"
 }--></div>
+,Chrome Headless 134.0.0.0 (Mac OS 10.15.7) LOG: null
 
 ]]>
   </system-out>

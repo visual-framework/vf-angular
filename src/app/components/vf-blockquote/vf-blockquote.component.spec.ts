@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { VfBlockquoteAngularComponent } from './vf-blockquote.component';
+import { VfBlockquoteAngularComponent } from '@visual-framework/vf-blockquote/vf-blockquote.angular';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 

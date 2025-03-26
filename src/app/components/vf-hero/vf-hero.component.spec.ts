@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { VfHeroAngularComponent } from './vf-hero.component';
+import { VfHeroAngularComponent } from '@visual-framework/vf-hero/vf-hero.angular';
 import { By } from '@angular/platform-browser';
 
 describe('VfHeroAngularComponent', () => {

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VfBadgeAngularComponent } from './vf-badge.component';
+import { VfBadgeAngularComponent } from '@visual-framework/vf-badge/vf-badge.angular';
 
 describe('VfBadgeAngularComponent', () => {
   let component: VfBadgeAngularComponent;

@@ -24,7 +24,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/vf-tabs/vf-tabs.js"
+            ]
           },
           "configurations": {
             "production": {

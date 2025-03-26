@@ -15,11 +15,12 @@ jobs:
       matrix:
         node-version: [16.x]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
+        cache: 'npm'
     - name: Install Dependencies
       run: |
         npm install
@@ -28,7 +29,7 @@ jobs:
       run: npm run test:ci
     - name: Upload Test Results
       if: always()
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: test-results
         path: |
@@ -40,17 +41,18 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Use Node.js 16.x
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v4
       with:
         node-version: 16.x
+        cache: 'npm'
     - name: Install Dependencies
       run: npm install
     - name: Build
       run: npm run build
     - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: build-output
         path: ./build
@@ -60,9 +62,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Download Build Artifacts
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: build-output
         path: ./build

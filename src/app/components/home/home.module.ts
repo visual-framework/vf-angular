@@ -11,12 +11,6 @@ import { HomeComponent } from './home.component';
     BrowserModule,
     FormsModule,
   ],
-  providers: [
-    {
-      provide: 'API_URL',
-      useValue: 'https://api.example.com' // replace with actual API URL or import environment
-    }
-  ],
   bootstrap: [HomeComponent]
 })
 export class HomeModule { }

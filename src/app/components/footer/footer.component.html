@@ -1,57 +1,4 @@
-<!--
-<footer class="footer">
-  <div class="footer-content">
-    <div class="footer-brand">
-      <div class="logo">
-        <img src="https://placehold.co/32x32" alt="Visual Framework Logo" />
-        <span>Visual Framework</span>
-      </div>
-      <p class="description">
-        A design system for creating consistent, accessible, and beautiful life science websites.
-      </p>
-    </div>
-
-    <div class="footer-links">
-      <div class="link-group">
-        <h3>Resources</h3>
-        <ul>
-          <li *ngFor="let link of footerLinks.resources">
-            <a [routerLink]="link.url">{{link.name}}</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="link-group">
-        <h3>Community</h3>
-        <ul>
-          <li *ngFor="let link of footerLinks.community">
-            <a [href]="link.url" target="_blank" rel="noopener noreferrer">{{link.name}}</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="link-group">
-        <h3>Support</h3>
-        <ul>
-          <li *ngFor="let link of footerLinks.support">
-            <a [routerLink]="link.url">{{link.name}}</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>&copy; {{currentYear}} Visual Framework. All rights reserved.</p>
-    <div class="legal-links">
-      <a routerLink="/privacy">Privacy Policy</a>
-      <a routerLink="/terms">Terms of Service</a>
-    </div>
-  </div>
-</footer>
--->
-
-    <footer class="vf-footer | vf-search-client-side--no-index">
+<footer class="vf-footer | vf-search-client-side--no-index">
   <div class="vf-footer__inner">
     <p class="vf-footer__notice">The Visual Framework is a toolkit to quickly and collaboratively build better life science websites.</p>
     <p class="vf-footer__notice">It is open source and used on dozens of life science websites and maintained by a community of front end developers, UX specialists and designers. <a class="vf-footer__link" href="https://stable.visual-framework.dev/guidance/discussing-the-vf">Get involved</a>.</p>
@@ -129,10 +76,8 @@
           </li>
         </ul>
       </div>
-      <div class="vf-links">
-      </div>
-      <div class="vf-links">
-      </div>
+      <div class="vf-links"></div>
+      <div class="vf-links"></div>
     </div>
     <section class="vf-footer__legal | vf-grid vf-grid__col-1">
       <span class="vf-footer__legal-text">
@@ -144,11 +89,12 @@
       <span class="vf-footer__legal-text">
         <a class="vf-footer__link" href="tel:004962213870">Tel: +49 6221 387-0</a>
       </span>
-      
+
     </section>
     <section class="vf-footer__legal">
       <span class="vf-footer__legal-text">
-        Latest release: <code class="">v2.5.21</code> <a href="https://stable.visual-framework.dev/updates" class="vf-footer__link">See more releases</a>
+        Latest release: <code class="">v2.5.21</code>
+        <a href="https://stable.visual-framework.dev/updates" class="vf-footer__link">See more releases</a>
       </span>
       <span class="vf-footer__legal-text">
         <a class="vf-footer__link" href="https://stable.visual-framework.dev/feed.xml">RSS Feed</a>
@@ -160,25 +106,26 @@
   </div>
 </footer>
 
-
-
-
 <div class="vf-grid">
   <div class="vf-body--text">
-    <p><code class="vf-code-example__pre"> ⚠️ You're running the development command; Page location ./src/site/index.njk </code></p>
+    <p>
+      <code class="vf-code-example__pre"> ⚠️ You're running the development command; Page location ./src/site/index.njk </code>
+    </p>
   </div>
 </div>
-
 
 <!-- IE11 polyfill JS -->
 <script nomodule crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=default"></script>
 
 <!-- This page was generated on 2025-03-09T19:33:26.256+00:00 -->
-<script src="/scripts/scripts.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="/scripts/scripts.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5ZLH2KNJP"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() {
+    dataLayer.push(arguments);
+  }
   gtag('js', new Date());
   gtag('config', 'G-N5ZLH2KNJP');
 </script>
