@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'components/vf-button', component: VfButtonComponent },
   { path: 'components/vf-hero', component: VfHeroComponent },
   { path: 'components/vf-tabs', component: VfTabsComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

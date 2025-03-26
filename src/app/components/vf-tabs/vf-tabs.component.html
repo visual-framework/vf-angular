@@ -178,7 +178,7 @@ vfTabs(document, false);
                     style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
                 >
 
-             <vf-tabs [tabsdata]="tabsdata"></vf-tabs>
+             <vf-tabs [tabsdata]="defaultTabsdata"></vf-tabs>
 
         </div>
 
@@ -208,73 +208,7 @@ vfTabs(document, false);
                     style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
                 >
 
-            <div class="vf-tabs">
-                <ul class="vf-tabs__list" data-vf-js-tabs>
-                    <li class="vf-tabs__item">
-                        <a class="vf-tabs__link" href="#vf-tabs__section--58">Section</a>
-                    </li>
-                    <li class="vf-tabs__item">
-                        <a class="vf-tabs__link" href="#vf-tabs__section--546">A Short Section</a>
-                    </li>
-                    <li class="vf-tabs__item">
-                        <a class="vf-tabs__link" href="#vf-tabs__section--878">A Rather Long Section</a>
-                    </li>
-                    <li class="vf-tabs__item">
-                        <a class="vf-tabs__link" href="#vf-tabs__section--8793456">Nested Tabs</a>
-                    </li>
-                    <li class="vf-tabs__item">
-                        <a class="vf-tabs__link" href="#vf-tabs__section--545541">A fifth section</a>
-                    </li>
-                    <li class="vf-tabs__item">
-                        <a class="vf-tabs__link" href="#vf-tabs__section--621211">A sixth section</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="vf-tabs-content" data-vf-js-tabs-content>
-                <section class="vf-tabs__section" id="vf-tabs__section--58">
-                    <h2>Section 1</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, tortor nec pharetra ultricies, ante erat imperdiet velit, nec laoreet enim lacus a velit. <a class="vf-link" href="#">Nam luctus</a>, enim in interdum condimentum, nisl diam iaculis lorem, vel volutpat mi leo sit amet lectus. Praesent non odio bibendum magna bibendum accumsan.</p>
-                </section>
-                <section class="vf-tabs__section" id="vf-tabs__section--546">
-                    <h2>Section 2</h2>
-                    <p>Nullam at diam nec arcu suscipit auctor non a erat. Sed et magna semper, eleifend magna non, facilisis nisl. Proin et est et lorem dictum finibus ut nec turpis. Aenean nisi tortor, euismod a mauris a, mattis scelerisque tortor. Sed dolor risus, varius a nibh id, condimentum lacinia est. In lacinia cursus odio a aliquam. Curabitur tortor magna, laoreet ut rhoncus at, sodales consequat tellus.</p>
-                </section>
-                <section class="vf-tabs__section" id="vf-tabs__section--878">
-                    <h2>Section 3</h2>
-                    <p>Phasellus ac tristique orci. Nulla maximus <a class="vf-link" href="#">justo nec dignissim consequat</a>. Sed vehicula diam sit amet mi efficitur vehicula in in nisl. Aliquam erat volutpat. Suspendisse lorem turpis, accumsan consequat consectetur gravida, <a class="vf-link" href="#">pellentesque ac ante</a>. Aliquam in commodo ligula, sit amet mollis neque. Vestibulum at facilisis massa.</p>
-                </section>
-                <section class="vf-tabs__section" id="vf-tabs__section--8793456">
-                    <h2>Section 4</h2>
-                    <p>
-                        <div class="vf-tabs">
-                            <ul class="vf-tabs__list" data-vf-js-tabs>
-                                <li class="vf-tabs__item">
-                                    <a class="vf-tabs__link" href="#vf-tabs__section-nested--234548">Nested tab 1</a>
-                                </li>
-                                <li class="vf-tabs__item">
-                                    <a class="vf-tabs__link" href="#vf-tabs__section-nested--29974">Nested tab 2</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="vf-tabs-content" data-vf-js-tabs-content>
-                            <section class="vf-tabs__section" id="vf-tabs__section-nested--234548">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, tortor nec pharetra ultricies, ante erat imperdiet velit, nec laoreet enim lacus a velit. <a href="#">Nam luctus</a>, enim in interdum condimentum, nisl diam iaculis lorem, vel volutpat mi leo sit amet lectus. Praesent non odio bibendum magna bibendum accumsan.</p>
-                            </section>
-                            <section class="vf-tabs__section" id="vf-tabs__section-nested--29974">
-                                <p>Nullam at diam nec arcu suscipit auctor non a erat. Sed et magna semper, eleifend magna non, facilisis nisl. Proin et est et lorem dictum finibus ut nec turpis. Aenean nisi tortor, euismod a mauris a, mattis scelerisque tortor. Sed dolor risus, varius a nibh id, condimentum lacinia est. In lacinia cursus odio a aliquam. Curabitur tortor magna, laoreet ut rhoncus at, sodales consequat tellus.</p>
-                            </section>
-                        </div>
-                </section>
-                <section class="vf-tabs__section" id="vf-tabs__section--545541">
-                    <h2>Section 5</h2>
-                    <p>Phasellus ac tristique orci. Nulla maximus <a class="vf-link" href="#">justo nec dignissim consequat</a>. Sed vehicula diam sit amet mi efficitur vehicula in in nisl. Aliquam erat volutpat. Suspendisse lorem turpis, accumsan consequat consectetur gravida, <a class="vf-link" href="#">pellentesque ac ante</a>. Aliquam in commodo ligula, sit amet mollis neque. Vestibulum at facilisis massa.</p>
-                </section>
-                <section class="vf-tabs__section" id="vf-tabs__section--621211">
-                    <h2>Section 6</h2>
-                    <p>Phasellus ac tristique orci. Nulla maximus <a class="vf-link" href="#">justo nec dignissim consequat</a>. Sed vehicula diam sit amet mi efficitur vehicula in in nisl. Aliquam erat volutpat. Suspendisse lorem turpis, accumsan consequat consectetur gravida, <a class="vf-link" href="#">pellentesque ac ante</a>. Aliquam in commodo ligula, sit amet mollis neque. Vestibulum at facilisis massa.</p>
-                </section>
-            </div>
+            <vf-tabs [tabsdata]="nestedTabsdata"></vf-tabs>
 
         </div>
 
@@ -304,28 +238,7 @@ vfTabs(document, false);
                     style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;"
                 >
 
-            <div class="vf-tabs">
-                <ul class="vf-tabs__list" data-vf-js-tabs>
-                    <li class="vf-tabs__item">
-                        <a class="vf-tabs__link" href="#vf-tabs__section--99999">Section</a>
-                    </li>
-                    <li class="vf-tabs__item">
-                        <a class="vf-tabs__link" href="#vf-tabs__section--88888">A Short Section</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="vf-tabs-content" data-vf-js-tabs-content>
-                <section class="vf-tabs__section" id="vf-tabs__section--99999">
-                    <h2>Default</h2>
-                    <p>An <a href="https://stable.visual-framework.dev/components/vf-tabs#vf-tabs__section--88888">example deep link</a> loading this anchor will directly activate the neighbouring tab. <code>/vf-tabs#vf-tabs__section--88888</code>
-                    </p>
-                </section>
-                <section class="vf-tabs__section" id="vf-tabs__section--88888">
-                    <h2>Deep-linked tab</h2>
-                    <p>If you see me on page load, the deep link has worked.</p>
-                </section>
-            </div>
+            <vf-tabs [tabsdata]="deepLinkTabsdata"></vf-tabs>
 
         </div>
 
