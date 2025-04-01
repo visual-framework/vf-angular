@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// import { AppNavigationComponent } from './components/navigation/navigation.component'; // Import the NavigationComponent
-// import { VfActivityGroupComponent } from './components/vf-activity-group/vf-activity-group.component';
 import { VfBannerComponent } from './components/vf-banner/vf-banner.component';
 import { VfBadgeComponent } from './components/vf-badge/vf-badge.component';
 import { VfBlockquoteComponent } from './components/vf-blockquote/vf-blockquote.component';
@@ -20,6 +18,7 @@ const routes: Routes = [
   { path: 'components/vf-button', component: VfButtonComponent },
   { path: 'components/vf-hero', component: VfHeroComponent },
   { path: 'components/vf-tabs', component: VfTabsComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

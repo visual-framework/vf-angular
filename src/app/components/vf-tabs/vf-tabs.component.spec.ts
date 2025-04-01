@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { VfTabsAngularComponent } from './vf-tabs.component';
+import { VfTabsAngularComponent } from '@visual-framework/vf-tabs/vf-tabs.angular';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ChangeDetectorRef } from '@angular/core';
 

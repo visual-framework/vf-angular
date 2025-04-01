@@ -8,11 +8,16 @@ function runNgTest(options = []) {
     const command = `ng test ${options.join(' ')}`;
     const child = exec(command);
 
+    let output = '';
+    let errorOutput = '';
+
     child.stdout.on('data', (data) => {
+      output += data;
       process.stdout.write(data);
     });
 
     child.stderr.on('data', (data) => {
+      errorOutput += data;
       process.stderr.write(data);
     });
 
@@ -20,28 +25,31 @@ function runNgTest(options = []) {
       if (code === 0) {
         resolve();
       } else {
-        reject(new Error(`ng test failed with code ${code}`));
+        const error = new Error(`ng test failed with code ${code}`);
+        error.stdout = output;
+        error.stderr = errorOutput;
+        reject(error);
       }
     });
   });
 }
 
 // Task to run all tests in CI mode
-gulp.task('test:ci', async () => {
-  try {
-    await runNgTest([
-      '--no-watch',
-      '--browsers=ChromeHeadless',
-      '--code-coverage',
-      '--source-map=true',
-      '--progress=false',
-      '--reporters=junit,coverage',
-      '--karma-config=karma.conf.ci.js'
-    ]);
-  } catch (error) {
-    console.error('CI Test execution failed:', error);
-    process.exit(1); // Ensure pipeline fails on test errors
-  }
+gulp.task('test:ci', () => {
+  return runNgTest([
+    '--no-watch',
+    '--browsers=ChromeHeadless',
+    '--code-coverage',
+    '--source-map=true',
+    '--progress=true',
+    '--reporters=spec,junit,coverage',
+    '--karma-config=karma.conf.ci.js'
+  ]).catch(error => {
+    console.error('CI Test execution failed:');
+    if (error.stdout) console.log('Test output:', error.stdout);
+    if (error.stderr) console.error('Test errors:', error.stderr);
+    process.exit(1);
+  });
 });
 
 // Task to run all tests including VF components

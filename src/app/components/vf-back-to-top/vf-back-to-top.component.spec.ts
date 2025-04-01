@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { VfBackToTopAngularComponent } from './vf-back-to-top.component';
+import { VfBackToTopAngularComponent } from '@visual-framework/vf-back-to-top/vf-back-to-top.angular';
 
 describe('VfBackToTopAngularComponent', () => {
     let component: VfBackToTopAngularComponent;
