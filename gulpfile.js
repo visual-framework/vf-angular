@@ -35,23 +35,21 @@ function runNgTest(options = []) {
 }
 
 // Task to run all tests in CI mode
-gulp.task('test:ci', async () => {
-  try {
-    await runNgTest([
-      '--no-watch',
-      '--browsers=ChromeHeadless',
-      '--code-coverage',
-      '--source-map=true',
-      '--progress=true',
-      '--reporters=spec,junit,coverage',
-      '--karma-config=karma.conf.ci.js'
-    ]);
-  } catch (error) {
+gulp.task('test:ci', () => {
+  return runNgTest([
+    '--no-watch',
+    '--browsers=ChromeHeadless',
+    '--code-coverage',
+    '--source-map=true',
+    '--progress=true',
+    '--reporters=spec,junit,coverage',
+    '--karma-config=karma.conf.ci.js'
+  ]).catch(error => {
     console.error('CI Test execution failed:');
     if (error.stdout) console.log('Test output:', error.stdout);
     if (error.stderr) console.error('Test errors:', error.stderr);
     process.exit(1);
-  }
+  });
 });
 
 // Task to run all tests including VF components
