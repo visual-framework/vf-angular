@@ -7,7 +7,7 @@ on:
     branches:
       - master
 env:
-  CI: false
+  CI: true
 jobs:
   test:
     if: false
@@ -40,7 +40,7 @@ jobs:
         overwrite: true
 
   build:
-    needs: test
+    # needs: test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
