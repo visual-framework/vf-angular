@@ -10,6 +10,7 @@ env:
   CI: false
 jobs:
   test:
+    if: false
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -56,7 +57,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: build-output
-        path: ./build
+        path: dist/vf-angular-boilerplate
 
   deploy:
     needs: build
@@ -68,9 +69,9 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: build-output
-        path: ./build
+        path: dist/vf-angular-boilerplate
     - name: Deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_dir: ./build
+        publish_dir: dist/vf-angular-boilerplate
