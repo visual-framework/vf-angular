@@ -61,8 +61,8 @@ jobs:
 
   deploy:
     needs: build
+    if: ${{ github.ref == 'refs/heads/master' || github.base_ref == 'master' }}
     runs-on: ubuntu-latest
-    if: github.base_ref == 'master'
     steps:
     - uses: actions/checkout@v4
     - name: Download Build Artifacts
