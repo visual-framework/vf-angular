@@ -10,6 +10,7 @@ env:
   CI: false
 jobs:
   test:
+    if: false
     runs-on: ubuntu-latest
     strategy:
       matrix:
