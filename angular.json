@@ -2,7 +2,7 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "projects": {
-    "vf-angular-boilerplate": {
+    "vf-angular": {
       "projectType": "application",
       "root": "",
       "sourceRoot": "src",
@@ -11,7 +11,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/vf-angular-boilerplate",
+            "outputPath": "dist/vf-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -43,14 +43,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "vf-angular-boilerplate:build"
+            "browserTarget": "vf-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "vf-angular-boilerplate:build:production"
+              "browserTarget": "vf-angular:build:production"
             },
             "development": {
-              "browserTarget": "vf-angular-boilerplate:build:development"
+              "browserTarget": "vf-angular:build:development"
             }
           }
         },
