@@ -52,7 +52,7 @@ jobs:
     - name: Install Dependencies
       run: npm install
     - name: Build
-      run: npm run build
+      run: npm run build:ghpages
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
