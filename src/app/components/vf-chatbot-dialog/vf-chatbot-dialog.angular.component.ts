@@ -1,0 +1,76 @@
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Output,
+  Input,
+  AfterViewInit
+} from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'vf-chatbot-dialog',
+  template: `
+    <div
+      class="vf-chatbot-dialog"
+      data-vf-js-chatbot-dialog
+    >
+      <div class="vf-chatbot-dialog__content">
+        <div class="vf-chatbot-dialog__header vf-u-margin__bottom--400">
+          <h2 class="vf-chatbot-dialog__title">{{ title }}</h2>
+
+          <button
+            class="vf-chatbot-dialog__close"
+            data-vf-js-dialog-close
+            aria-label="Close dialog"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 
+                   10.59 12 5 17.59 6.41 19 12 13.41 
+                   17.59 19 19 17.59 13.41 12z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="vf-chatbot-dialog__body vf-u-margin__bottom--800">
+          <p
+            class="vf-text vf-text-body--3"
+            [innerHTML]="message"
+          ></p>
+        </div>
+
+        <div class="vf-chatbot-dialog__actions">
+          <button
+            class="vf-chatbot-dialog__button vf-chatbot-dialog__button--outline"
+            data-vf-js-dialog-cancel
+          >
+            {{ cancelLabel }}
+          </button>
+
+          <button
+            class="vf-chatbot-dialog__button vf-chatbot-dialog__button--primary"
+            data-vf-js-dialog-confirm
+          >
+            {{ confirmLabel }}
+          </button>
+        </div>
+      </div>
+    </div>
+  `
+})
+export class VfChatbotDialogAngularComponent implements AfterViewInit {
+  @Input() title = 'Close chat and delete conversation?';
+  @Input() message = 'Are you sure you want to close the chat? <br>Your current conversation history will be permanently deleted.';
+  @Input() cancelLabel = 'Keep chat open';
+  @Input() confirmLabel = 'Close and delete';
+
+
+  constructor(private elRef: ElementRef) {}
+
+  ngAfterViewInit(): void {
+    const el = this.elRef.nativeElement as HTMLElement;
+  }
+
+}
