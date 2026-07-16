@@ -8,9 +8,11 @@ import { VfHeroComponent } from './components/vf-hero/vf-hero.component';
 import { VfTabsComponent } from './components/vf-tabs/vf-tabs.component';
 import { VfBackToTopComponent } from './components/vf-back-to-top/vf-back-to-top.component';
 import { HomeComponent } from './components/home/home.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'search', component: SearchComponent },
   { path: 'components/vf-back-to-top', component: VfBackToTopComponent },
   { path: 'components/vf-badge', component: VfBadgeComponent },
   { path: 'components/vf-banner', component: VfBannerComponent },

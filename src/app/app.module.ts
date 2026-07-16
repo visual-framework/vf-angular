@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppHeaderModule } from './components/header/header.module';
 import { AppFooterModule } from './components/footer/footer.module';
 import { VfComponentsModule } from './components/vf-components.module';
+import { SearchModule } from './components/search/search.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -20,6 +21,7 @@ import { VfComponentsModule } from './components/vf-components.module';
     AppHeaderModule,
     AppFooterModule,
     VfComponentsModule,
+    SearchModule,
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
