@@ -1,0 +1,11 @@
+.snippet {
+  margin: 0;
+}
+
+[data-vf-search-client-side-results] {
+  width: min(100%, 70rem);
+}
+
+[data-vf-search-client-side-results] article {
+  margin-top: 1rem;
+}

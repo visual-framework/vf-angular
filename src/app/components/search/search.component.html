@@ -1,0 +1,54 @@
+<div>
+  <section class="vf-intro" id="an-id-for-anchor">
+    <div class="vf-stack">
+      <h1 class="vf-intro__heading ">Search</h1>
+      <p class="vf-lede">Search documentation and guidance.</p>
+
+      <p class="vf-intro__text"></p>
+    </div>
+  </section>
+  <div class="embl-grid embl-grid--has-centered-content">
+    <div></div>
+    <div class="vf-stack vf-stack--400">
+      <form action="search" method="GET" class="vf-form vf-form--search vf-form--search--responsive | vf-sidebar vf-sidebar--end">
+        <div class="vf-sidebar__inner">
+          <div class="vf-form__item | vf-search__item">
+            <label class="vf-form__label vf-u-sr-only | vf-search__label" for="search_query_results">Search</label>
+            <input
+            #searchInput
+            type="search"
+            id="search_query_results"
+            placeholder="Search components and documentation"
+            name="search_query"
+            [value]="searchTerm"
+            (input)="onSearchInput(searchInput.value)"
+            class="vf-search__input | vf-form__input"
+            data-vf-search-client-side-input
+            data-vf-search-client-side-destination-prefix=""
+          >
+          </div>
+
+          <button type="submit" class="vf-search__button | vf-button vf-button--primary">
+            <span class="vf-button__text">Search</span>
+          </button>
+        </div>
+      </form>
+
+      <section class="vf-stack vf-stack--400 vf-u-margin__bottom--400" data-vf-search-client-side-results>
+        <p *ngIf="!searchTerm" class="snippet">Enter a search query.</p>
+        <p *ngIf="searchTerm && results.length === 0" class="snippet">No results found</p>
+
+        <article *ngFor="let result of results" class="vf-box">
+          <h3 class="vf-text vf-text-heading--3">
+            <a [routerLink]="result.url" [queryParams]="{ q: searchTerm }">{{ result.title }}</a>
+          </h3>
+          <p class="snippet">{{ result.text }}</p>
+          <p>
+            <code>{{ result.url }}</code>
+          </p>
+        </article>
+      </section>
+    </div>
+    <div></div>
+  </div>
+</div>
