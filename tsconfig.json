@@ -11,6 +11,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "inlineSources": true,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
@@ -22,74 +23,18 @@
     "lib": [
       "ES2022",
       "dom"
-    ],
-    "paths": {
-      "vf-button.angular": [
-        "dist/vf-button.angular"
-      ],
-      "vf-tabs.angular": [
-        "dist/vf-tabs.angular"
-      ],
-      "vf-back-to-top.angular": [
-        "dist/vf-back-to-top.angular"
-      ],
-      "vf-badge.angular": [
-        "dist/vf-badge.angular"
-      ],
-      "vf-banner.angular": [
-        "dist/vf-banner.angular"
-      ],
-      "vf-blockquote.angular": [
-        "dist/vf-blockquote.angular"
-      ],
-      "vf-chatbot-action-prompt.angular": [
-        "./dist/vf-chatbot-action-prompt.angular"
-      ],
-      "vf-chatbot-dialog.angular": [
-        "./dist/vf-chatbot-dialog.angular"
-      ],
-      "vf-chatbot-fab.angular": [
-        "./dist/vf-chatbot-fab.angular"
-      ],
-      "vf-chatbot-feedback.angular": [
-        "./dist/vf-chatbot-feedback.angular"
-      ],
-      "vf-chatbot-modal.angular": [
-        "./dist/vf-chatbot-modal.angular"
-      ],
-      "vf-chatbot-prompt.angular": [
-        "./dist/vf-chatbot-prompt.angular"
-      ],
-      "vf-chatbot-selector.angular": [
-        "./dist/vf-chatbot-selector.angular"
-      ],
-      "vf-chatbot-sources.angular": [
-        "./dist/vf-chatbot-sources.angular"
-      ],
-      "vf-chatbot-standalone.angular": [
-        "./dist/vf-chatbot-standalone.angular"
-      ],
-      "vf-chatbot-welcome-angular": [
-        "./dist/vf-chatbot-welcome-angular"
-      ],
-      "vf-chatbot.angular": [
-        "./dist/vf-chatbot.angular"
-      ],
-      "vf-button.angular": [
-        "dist/vf-button.angular"
-      ],
-      "vf-hero.angular": [
-        "dist/vf-hero.angular"
-      ],
-      "vf-tabs.angular": [
-        "dist/vf-tabs.angular"
-      ]
-    }
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "include": [
+    "src/main.ts",
+    "src/polyfills.ts",
+    "src/**/*.d.ts",
+    "src/types/**/*.d.ts"
+  ]
 }

@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'visual-framework';
-  config = {
+  config: any = {
       type: "modal",
       title: "AI Assistant",
       welcome_logo: true,
@@ -26,15 +26,15 @@ export class AppComponent {
         'Review AI generated content for accuracy. <a class="vf-link" target="_blank" rel="noopener noreferrer" aria-label="Leave feedback (opens in new tab)" href="https://embl.service-now.com/esc?id=sc_cat_item&sys_id=5eeb8eb91b92e650b376da88b04bcbc1">Leave feedback</a>.',
       icons: {
         assistant_avatar:
-          "../../assets/vf-chatbot/assets/vf-chatbot--icon-16x16-dark-green.svg",
+            "./assets/vf-chatbot/assets/vf-chatbot--icon-16x16-dark-green.svg",
         user_avatar:
-          "../../assets/vf-chatbot/assets/vf-chatbot--avatar-user.svg",
-        send_button: "../../assets/vf-chatbot/assets/vf-chatbot--icon-send.svg",
+            "./assets/vf-chatbot/assets/vf-chatbot--avatar-user.svg",
+          send_button: "./assets/vf-chatbot/assets/vf-chatbot--icon-send.svg",
         main_logo_url:
-          "../../assets/vf-chatbot/assets/vf-chatbot--icon-32x32-dark-green.svg",
+            "./assets/vf-chatbot/assets/vf-chatbot--icon-32x32-dark-green.svg",
         minimize:
-          "../../assets/vf-chatbot/assets/vf-chatbot--icon-minimize.svg",
-        close: "../../assets/vf-chatbot/assets/vf-chatbot--icon-close.svg"
+            "./assets/vf-chatbot/assets/vf-chatbot--icon-minimize.svg",
+          close: "./assets/vf-chatbot/assets/vf-chatbot--icon-close.svg"
       },
 
       api: {

@@ -1,0 +1,642 @@
+<section class="vf-content component-library-notes | vf-stack vf-stack--400">
+	<div class="vf-banner vf-banner--alert vf-banner--warning">
+		<div class="vf-banner__content"><p class="vf-banner__text">
+			<span class="vf-badge vf-badge--tertiary ">beta</span>
+			This component version is ready to be used but is still in active development.
+		</p></div>
+	</div>
+
+	<section class="vf-intro" id="about">
+		<div><!-- empty --></div>
+		<div class="vf-stack">
+			<h1 class="vf-intro__heading vf-intro__heading--has-tag">Chatbot Standalone
+				<a href="/guidance/component-types/" class="vf-badge vf-badge--primary vf-badge--phases">container</a>
+			</h1>
+			<p class="vf-lede"><span>The <code>vf-chatbot-standalone</code> component provides a full-screen conversational interface between a user and an AI system. It is typically accessed through a dedicated route or external site. Designed for more complex interactions, it supports extended dialogues, exploration of multiple topics, and access to documents or detailed support resources.</span></p>
+			<p class="vf-intro__text">
+				<a class="vf-link" href="https://github.com/visual-framework/vf-core/tree/develop/components/vf-chatbot-standalone"><img src="https://img.shields.io/badge/github-vf--chatbot--standalone-blue" alt="github location"></a>
+				<a class="vf-link" href="https://badge.fury.io/js/%40visual-framework%2Fvf-chatbot-standalone"><img src="https://badge.fury.io/js/%40visual-framework%2Fvf-chatbot-standalone.svg" alt="npm version"></a>
+			</p>
+		</div>
+	</section>
+  <hr class="vf-divider">
+	<section class="embl-grid">
+		<div class="vf-section-header"><h2 class="vf-section-header__heading" id="usage"> Usage</h2></div>
+		<article>
+			<h3>When to use this component</h3>
+			<p>Only use the chatbot standalone if there's evidence it helps users:</p>
+			<ul>
+				<li>Engage in longer sessions or structured tasks such as report generation, data analysis, or learning journeys</li>
+				<li>Focus in a distraction-free environment optimized for dialogue</li>
+				<li>Interact with the bot as primary interface, rather than a secondary support layer</li>
+				<li>Access rich responses such as cards, file previews, or dynamic visualizations</li>
+			</ul>
+			<p>For example, the standalone chatbot works well when users need to complete complex workflows or explore content across multiple interactions. It is also effective when the conversation itself drives the experience, rather than supporting it. Test with users to ensure the dedicated interface supports their goals and provides clear value over embedded alternatives.</p>
+			<h3>When not to use this component</h3>
+			<p>The chatbot standalone opens in a dedicated interface and removes users from their current context. This can interrupt active tasks or create unnecessary friction for users who only need quick or simple guidance.</p>
+			<p>Avoid using the standalone chatbot for brief interactions, especially when users benefit from staying within the current page or task flow. A <a href="../vf-chatbot-modal">chatbot modal</a> or embedded support is usually more appropriate in these cases.</p>
+			<p>Do not use the standalone chatbot when:</p>
+			<ul>
+				<li>The task can be resolved with a simple search or static content</li>
+				<li>The chatbot does not offer a clear improvement over lighter support mechanisms</li>
+				<li>Accessing the chatbot disrupts processes that require deep concentration or formal</li>
+				<li>The chatbot lacks the intelligence or depth to sustain a meaningful experience</li>
+				<li>The target audience expects or benefits more from traditional, structured interfaces</li>
+			</ul>
+			<p>Test your design without a standalone chatbot first. Well-written content, embedded guidance, or contextual help may meet user needs more effectively without introducing unnecessary complexity.</p>
+			<h3>Deciding between modal vs standalone</h3>
+			<p>The <a href="../vf-chatbot-modal">chatbot modal</a> and chatbot standalone are two distinct variants for delivering conversational interfaces. Choose between them based on use case needs and task complexity.</p>
+			<h4>Modal</h4>
+			<ul>
+				<li>For in-context support (e.g. help with current page or workflow)</li>
+				<li>Access point is via a floating action button on the page</li>
+				<li>Supports simple tasks such as getting information</li>
+			</ul>
+			<h4>Standalone</h4>
+			<ul>
+				<li>Suitable for exploratory or focused workflows (e.g. discovering genetic variants)</li>
+				<li>Launched via a link (such as "Talk to our AI chat assistant")</li>
+				<li>Supports more complex tasks that benefit from sustained engagement</li>
+			</ul>
+			<h3>Anatomy</h3>
+			<table>
+				<thead>
+					<tr><th>Element</th><th>Description</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>Title bar</td><td>Shows the chatbot name, minimise button and close button. The title bar may include a dropdown for selecting categories.</td></tr>
+					<tr><td>Dialogue section</td><td>Scrollable chat window showing the conversation log.</td></tr>
+					<tr><td>Intro message</td><td>A brief onboarding message explaining the purpose and capabilities of the chatbot. Shows the icon, title and short message (Max. 2 lines of text).</td></tr>
+					<tr><td>Banner</td><td>Used to show optional disclaimers or alerts (Max. 3 lines of text). For cases that require user consent, use a blur overlay on the background or a pre-access popup instead, as banners may be missed.</td></tr>
+					<tr><td>Text input area</td><td>Open input field for typing and sending queries. Expands up to 5 lines, after which it becomes scrollable.</td></tr>
+				</tbody>
+			</table>
+			<h3>Flows</h3>
+			<table>
+				<thead>
+					<tr><th>Flow</th><th>Details</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>Suggested prompts</td><td>Appear on the initial screen. Provide a quick-start to users with clickable queries. They help to provide context on the type of questions the user can ask on the platform. (Max. 60 characters)</td></tr>
+					<tr><td>Closing the chat dialogue</td><td>Clicking on the close icon "X" triggers a confirmation prompt to prevent accidental loss of the chat log.</td></tr>
+					<tr><td>Error management</td><td>If the chatbot is unable to provide a response to the query, display a clear error message and provide an alternative way for them to get their answers.</td></tr>
+					<tr><td>Links</td><td>Displayed in a clear underlined style. They can be shown inline or as a list.</td></tr>
+					<tr><td>Source attribution</td><td>Chips are shown in relevant paragraphs which cite the sources. Links to the sources and more details can be accessed via a "View sources" button.</td></tr>
+					<tr><td>Feedback on a query level</td><td>Users can assess the AI responses with a thumbs up/thumbs down or optional close/open response fields to give more details.</td></tr>
+					<tr><td>Category selection</td><td>A dropdown in the title bar lets users switch focus areas (e.g LLM version or data source). Single or multi-selection variants can be used depending on the use case.</td></tr>
+				</tbody>
+			</table>
+			<h3>Working example</h3>
+			<p>You can access working example of standalone version here:
+				<a href="/chatbot">Visual Framework Chatbot - Standalone</a></p>
+			<h3>Visual branding elements and content</h3>
+			<p>The Chatbot branding elements follow EMBL brand guidelines but can be updated to suit your use case. For advice on branding updates please contact the EMBL Communications Team.</p>
+			<p>Texts shown in the examples are placeholder content. Please review and update all wording to fit your your project needs and ensure it meets legal, accessibility and organisational requirements.</p>
+			<h3>Accessibility</h3>
+			<p>The component targets WCAG 2.1 AA accessibility standard.</p>
+			<h3>Install</h3>
+			<p>This repository is distributed with <a href="https://www.npmjs.com/">npm</a>. After <a href="https://www.npmjs.com/get-npm">installing npm</a> and <a href="https://classic.yarnpkg.com/en/docs/install">yarn</a>, you can install <code>vf-chatbot-standalone</code> and other dependant components with this command.</p>
+			<pre><code class="language-bash">yarn add &#64;visual-framework/vf-chatbot &#64;visual-framework/vf-chatbot-standalone
+</code></pre>
+			<h3>Sass/CSS</h3>
+			<pre><code class="language-scss">&#64;import "&#64;visual-framework/vf-chatbot-standalone/index.scss";
+</code></pre>
+			<h3>JavaScript</h3>
+			<pre><code class="language-javascript">
+
+import &#123; initVFChatbot &#125; from 'vf-chatbot/vf-chatbot.js';
+window.addEventListener("load", function() &#123;
+	initVFChatbot(config);
+&#125;);
+</code></pre>
+			<p>where config is the configuration object with different options as described below</p>
+			<h4>Core Configuration Options</h4>
+			<pre><code class="language-javascript">const config = &#123;
+	type: "standalone",
+	title: "AI Assistant",
+	welcome_logo: true,
+	welcome_message: "Welcome! I'm here to help",
+	welcome_logo_alt: "AI Assistant",
+	welcome_suggestions_title: "Try asking me:",
+	input_placeholder: "Ask me ...",
+	welcome_max_suggestions: 4,
+	disclaimer: 'Disclaimer: This chatbot is designed to assist you with general information and basic inquiries. See our &lt;a class="vf-banner__link" target="_blank" rel="noopener noreferrer" aria-label="disclaimer notes (opens in new tab)" href="https://www.ebi.ac.uk/data-protection/privacy-notice/embl-ebi-public-website/"&gt;disclaimer notes&lt;/a&gt;.',
+	footnote: 'Review AI generated content for accuracy. &lt;a class="vf-link" target="_blank" rel="noopener noreferrer" aria-label="Leave feedback (opens in new tab)" href="https://embl.service-now.com/esc?id=sc_cat_item&amp;sys_id=5eeb8eb91b92e650b376da88b04bcbc1"&gt;Leave feedback&lt;/a&gt;.',
+	icons: &#123;
+		assistant_avatar: "../../assets/vf-chatbot/assets/vf-chatbot--icon-16x16-dark-green.svg",
+		user_avatar: "../../assets/vf-chatbot/assets/vf-chatbot--avatar-user.svg",
+		send_button: "../../assets/vf-chatbot/assets/vf-chatbot--icon-send.svg",
+		main_logo_url: "../../assets/vf-chatbot/assets/vf-chatbot--icon-32x32-dark-green.svg",
+		minimize: "../../assets/vf-chatbot/assets/vf-chatbot--icon-minimize.svg",
+		close: "../../assets/vf-chatbot/assets/vf-chatbot--icon-close.svg"
+ &#125;,
+	api: &#123;
+		chat_endpoint: false,
+		feedback_endpoint: false,
+		qa_data_url: "../../assets/vf-chatbot/assets/vf-chatbot-qa.json",
+		headers:&#123;
+			"Content-Type": "application/json",
+			"Authorization": "Bearer your-token"
+		&#125;,
+		timeout: 10000
+	&#125;,
+	features: &#123;
+		enable_welcome: true,
+		enable_feedback: true,
+		enable_sources: true,
+		enable_welcome_suggestions: true,
+		enable_typing_indicator: true,
+		enable_disclaimer: true,
+		enable_predefined_qa: true,
+		enable_fallback_responses: true,
+		enable_qa_data_loading: true,
+		enable_instant_feedback: false
+	&#125;,
+	behavior: &#123;
+		auto_scroll: true,
+		typing_delay: 800,
+		show_scrollbar: false
+&#125;,
+	selectorContext: &#123;
+		chatbotRoutes: &#123;
+			multiSelect: true,
+			maxMultiSelect: 3,
+			showSearch: true,
+			showSearchThreshold: 5,
+			showAllServices: true,
+			showAllServicesSelected: true,
+			routes: "../../assets/vf-chatbot/assets/vf-chatbot-selector-services.json",
+			placeholder: "Select services",
+			title: "Services",
+			selector_logo_url: "../../assets/vf-chatbot/assets/vf-chatbot--icon-24x24-dark-green.svg",
+			selector_logo_title: "AI Assistant"
+		&#125;
+	&#125;,
+	handlers: &#123;
+		on_message_send: "handleMessageSend",
+		on_response_receive: "handleResponseReceive",
+		on_feedback_submit: "handleFeedbackSubmit",
+		on_suggestion_click: "handleSuggestionClick",
+		on_error: "handleError",
+		on_conversation_start: "handleConversationStart",
+		on_conversation_end: "handleConversationEnd"
+	&#125;,
+	feedback_options: &#123;
+		positive: [
+			&#123; id: "accurate", label: "Accurate" &#125;,
+			&#123; id: "easy", label: "Easy to understand" &#125;,
+			&#123; id: "formatted", label: "Well formatted" &#125;
+		],
+		negative: [
+			&#123; id: "inaccurate", label: "Inaccurate" &#125;,
+			&#123; id: "nocontext", label: "Did not use context" &#125;,
+			&#123; id: "poorformat", label: "Poorly formatted" &#125;
+		]
+	&#125;
+&#125;;
+</code></pre>
+			<h4>Service Selector Configuration</h4>
+			<p>The chatbot includes an integrated selector component which can be configured to present different selection options to user:</p>
+			<pre><code class="language-javascript">const selectorConfig = &#123;
+	selectorContext: &#123;
+		chatbotRoutes: &#123;
+			// Multi-selection settings
+			multiSelect: true,
+			maxMultiSelect: 3,
+
+			// Search functionality
+			showSearch: true,
+			showSearchThreshold: 5,
+
+			// "All Services" option
+			showAllServices: true,
+			showAllServicesSelected: true,
+
+			// Data source
+			routes: "assets/vf-chatbot-selector-services.json",
+
+			// UI labels and logo
+			placeholder: "Select services",
+			title: "Available Services",
+			selector_logo_url: "../../assets/vf-chatbot/assets/vf-chatbot--icon-24x24-dark-green.svg",
+			selector_logo_title: "AI Assistant"
+		&#125;
+	&#125;
+&#125;;
+
+Please note that if you want to opt for a single selection option version of the selector dropdown, you need to omit the multiSelect, maxMultiSelect, showAllServices and showAllServicesSelected properties from the selectorConfig above.
+</code></pre>
+			<p><strong>Selector Data Format (JSON):</strong></p>
+			<pre><code class="language-json">&#123;
+	"routes": [
+		&#123;
+			"id": "service-1",
+			"title": "Service 1 title"
+		&#125;,
+		&#123;
+			"id": "service-2",
+			"title": "Service 2 title"
+		&#125;
+	]
+&#125;
+</code></pre>
+			<h3>Event Handling</h3>
+			<h4>Built-in Event Handlers</h4>
+			<p>Chatbot comes with a provision to allow custom event handlers. These handlers can be defined in your code to handle specific actions for different events triggered during interaction with chatbot. Configure custom handlers for chatbot events:</p>
+			<pre><code class="language-javascript">const config = &#123;
+	handlers: &#123;
+		on_message_send: "handleMessageSend",
+		on_response_receive: "handleResponseReceive",
+		on_feedback_submit: "handleFeedbackSubmit",
+		on_suggestion_click: "handleSuggestionClick",
+		on_error: "handleError",
+		on_conversation_start: "handleConversationStart",
+		on_conversation_end: "handleConversationEnd"
+	&#125;
+&#125;;
+
+function handleMessageSend(message, conversationId) &#123;
+	console.log('User sent:', message);
+&#125;
+
+function handleResponseReceive(response, sources, prompts) &#123;
+	console.log('Assistant responded:', response);
+&#125;
+
+function handleFeedbackSubmit(feedbackData) &#123;
+	console.log('Feedback received:', feedbackData);
+&#125;
+</code></pre>
+			<h4>Custom Event Listeners</h4>
+			<p>Likewise you can also listen to events emitted by the chatbot for specific interactions:</p>
+			<pre><code class="language-javascript">document.addEventListener('vf-chatbot:message-send', (event) =&gt; &#123;
+	const &#123; message, conversationId &#125; = event.detail;
+&#125;);
+
+document.addEventListener('vf-chatbot:message-receive', (event) =&gt; &#123;
+	const &#123; message, conversationId &#125; = event.detail;
+&#125;);
+
+document.addEventListener('vf-chatbot-feedback:submit', (event) =&gt; &#123;
+	const &#123; messageId, feedbackType, feedbackText, feedbackComment &#125; = event.detail;
+&#125;);
+
+document.addEventListener('vf-chatbot-welcome:suggestion-click', (event) =&gt; &#123;
+	const &#123; question &#125; = event.detail;
+&#125;);
+
+document.addEventListener('vf-chatbot:assistant-change', (obj) =&gt; &#123;
+	const &#123; selectedRoutes &#125; = obj.selectedAssistants;
+	const &#123; conversationId &#125; = obj.conversationId;
+&#125;);
+
+document.addEventListener('vf-chatbot:error', (event) =&gt; &#123;
+	const &#123; message, conversationId &#125; = event.detail;
+&#125;);
+
+document.addEventListener('vf-chatbot:conversation-start', (event) =&gt; &#123;
+	const &#123; message, conversationId &#125; = event.detail;
+&#125;);
+
+document.addEventListener('vf-chatbot:conversation-end', (event) =&gt; &#123;
+	const &#123; message, conversationId &#125; = event.detail;
+&#125;);
+</code></pre>
+			<h3>Feedback System Configuration</h3>
+			<h4>Feedback (with form)</h4>
+			<pre><code class="language-javascript">const config = &#123;
+	features: &#123;
+		enable_feedback: true,
+		enable_instant_feedback: false
+	&#125;,
+	feedback_options: &#123;
+		positive: [
+			&#123; id: "accurate", label: "Accurate" &#125;,
+			&#123; id: "easy", label: "Easy to understand" &#125;,
+			&#123; id: "formatted", label: "Well formatted" &#125;
+		],
+		negative: [
+			&#123; id: "inaccurate", label: "Inaccurate answer" &#125;,
+			&#123; id: "nocontext", label: "Did not use context" &#125;,
+			&#123; id: "poorformat", label: "Poorly formatted" &#125;
+		]
+	&#125;
+&#125;;
+</code></pre>
+			<h4>Instant Feedback (one-click)</h4>
+			<pre><code class="language-javascript">const config = &#123;
+	features: &#123;
+		enable_feedback: true,
+		enable_instant_feedback: true
+	&#125;
+&#125;;
+</code></pre>
+			<h3>Q&amp;A Data Configuration</h3>
+			<p>Load predefined questions and answers:</p>
+			<pre><code class="language-javascript">const config = &#123;
+	features: &#123;
+		enable_predefined_qa: true,
+		enable_qa_data_loading: true
+	&#125;,
+	api: &#123;
+		qa_data_url: "path/to/qa-data.json"
+	&#125;
+&#125;;
+</code></pre>
+			<p><strong>Q&amp;A Data Format:</strong></p>
+			<pre><code class="language-json">&#123;
+	"predefinedQA": &#123;
+		"How can I submit genomic data to EMBL-EBI?": &#123;
+			"answer": "To submit genomic data, visit the EMBL-EBI submission portal, where you’ll find step-by-step guides and tools for submitting sequencing data, assemblies, annotations, and more.",
+			"sources": [
+				&#123;
+					"domain": "ebi.ac.uk",
+					"title": "EMBL's European Bioinformatics Institute",
+					"url": "https://www.ebi.ac.uk/",
+					"description": "Run BLAST searches against comprehensive sequence databases at EMBL-EBI."
+				&#125;,
+				&#123;
+					"domain": "ena-docs.readthedocs.io",
+					"title": "ENA Documentation",
+					"url": "https://ena-docs.readthedocs.io/en/latest/",
+					"description": "ENA Documentation"
+				&#125;
+			]
+		&#125;
+	&#125;,
+	"fallbackResponses": [
+		&#123;
+			"answer": "I'm sorry, I'm having trouble connecting to my knowledge base right now. Could you try again in a moment?",
+			"prompts": [
+				&#123;
+					"action_text": "Contact support team",
+					"action_url": "tel:+44 1223 494 444"
+				&#125;,
+				&#123;
+					"action_text": "Submit a support request",
+					"action_url": "https://www.ebi.ac.uk/about/contact/support/"
+				&#125;
+			]
+		&#125;
+	]
+&#125;
+</code></pre>
+			<h3>API Integration</h3>
+			<h4>Chat Endpoint</h4>
+			<p>Your chat API should accept POST requests:</p>
+			<pre><code class="language-javascript">&#123;
+	"message": "User's question",
+	"conversationId": "unique-id",
+	"context": &#123;
+		"selectedServices": ["service-1", "service-2"]
+	&#125;
+&#125;
+
+&#123;
+	"response": "Assistant's answer",
+	"sources": [
+		&#123;
+			"title": "Documentation Link",
+			"url": "https://example.com/docs"
+		&#125;
+	],
+	"prompts": [
+		&#123;
+			"action_text": "Learn More",
+			"action_url": "https://example.com/learn"
+		&#125;
+	]
+&#125;
+</code></pre>
+			<h4>Custom Welcome Screen</h4>
+			<pre><code class="language-javascript">const config = &#123;
+	features: &#123;
+		enable_welcome: true,
+		enable_welcome_suggestions: true
+	&#125;,
+	welcome_logo: true,
+	welcome_message: "Welcome to our AI assistant!",
+	welcome_suggestions_title: "Popular questions:",
+	welcome_max_suggestions: 6
+&#125;;
+</code></pre>
+			<h4>Source Citations</h4>
+			<pre><code class="language-javascript">const config = &#123;
+	features: &#123;
+		enable_sources: true,
+		enable_sources_custom_format: true,
+	&#125;
+&#125;;
+</code></pre>
+			<h4>Action Prompts</h4>
+			<pre><code class="language-javascript">&#123;
+	"response": "I can help you with that...",
+	"prompts": [
+		&#123;
+			"action_text": "Start Tutorial",
+			"action_url": "https://example.com/tutorial"
+		&#125;,
+		&#123;
+			"action_text": "Contact Support",
+			"action_url": "mailto:support&#64;example.com"
+		&#125;
+	]
+&#125;
+</code></pre>
+			<h3>Angular</h3>
+			<p>This component now has Angular support which has been tested on Angular version 18.2.21</p>
+
+			<div class="vf-u-padding--400" style="overflow: auto; background-image: linear-gradient(45deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(135deg, rgba(59, 111, 182, .1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(59, 111, 182, .1) 75%), linear-gradient(135deg, transparent 75%, rgba(59, 111, 182, .1) 75%);background-size: 20px 20px; background-position-x: 0px, 10px, 10px, 0px;background-position-y: 0px, 0px, -10px, 10px;">
+				<div
+					#standaloneRef
+					class="vf-content vf-chatbot-standalone-container"
+					[attr.data-vf-js-chatbot-standalone-container]="true"
+					[attr.data-vf-chatbot-config]="config | json"
+					[attr.aria-label]="config?.title + ' chatbot'"
+				>
+					<div class="vf-chatbot-standalone__header">
+						<div class="vf-chatbot-standalone__header-left">
+							<ng-container *ngIf="config?.selectorContext; else fallbackSelector">
+								<vf-chatbot-selector [context]="config?.selectorContext"></vf-chatbot-selector>
+							</ng-container>
+							<ng-template #fallbackSelector>
+								<div class="vf-chatbot-selector">
+									<div class="vf-chatbot-selector__title">
+										<img [src]="config?.selectorContext?.selector_logo_url" [alt]="config?.selectorContext?.selector_logo_title" />
+										<div class="vf-chatbot-selector__title-content">
+											<span class="vf-chatbot-selector__main-text">&#123;&#123; config?.selectorContext?.selector_logo_title &#125;&#125;</span>
+										</div>
+									</div>
+								</div>
+							</ng-template>
+						</div>
+					</div>
+
+					<div class="vf-chatbot-standalone | vf-u-background-color-ui--grey--light vf-u-margin__bottom--400" data-vf-js-chatbot-standalone>
+						<div class="vf-chatbot-standalone__content" data-vf-js-chatbot-standalone-content>
+							<vf-chatbot-welcome
+								*ngIf="config?.features?.enable_welcome"
+								[qaData]="qaData"
+								[welcome_logo]="config?.welcome_logo"
+								[welcome_logo_url]="config?.icons?.main_logo_url"
+								[welcome_logo_alt]="config?.welcome_logo_alt"
+								[welcome_title]="config?.title"
+								[welcome_message]="config?.welcome_message"
+								[welcome_suggestions_title]="config?.welcome_suggestions_title"
+								[enable_welcome_suggestions]="config?.features?.enable_welcome_suggestions"
+								[welcome_max_suggestions]="config?.welcome_max_suggestions"
+								[qa_data_url]="config?.api?.qa_data_url"
+								[enable_qa_data_loading]="config?.features?.enable_qa_data_loading"
+								[enable_predefined_qa]="config?.features?.enable_predefined_qa"
+								[enable_fallback_responses]="config?.features?.enable_fallback_responses"
+							></vf-chatbot-welcome>
+
+							<div
+								[ngClass]="{
+									'vf-chatbot-standalone__messages': config?.behavior?.show_scrollbar !== false,
+									'vf-chatbot-standalone__messages-no-scrollbar': config?.behavior?.show_scrollbar === false
+								}"
+								data-vf-js-chatbot-standalone-messages
+								[attr.data-auto-scroll]="config?.behavior?.auto_scroll"
+							>
+								<vf-chatbot-prompt
+									*ngFor="let msg of messages"
+									[type]="msg.type"
+									[avatar]="msg.avatar"
+									[content]="msg.content"
+									[sources]="sources"
+									[prompts]="prompts"
+									[allowFeedback]="config?.features?.enable_feedback"
+								></vf-chatbot-prompt>
+							</div>
+
+							<div *ngIf="config?.disclaimer && config?.features?.enable_disclaimer" class="vf-chatbot-standalone__disclaimer" data-vf-js-chatbot-standalone-disclaimer>
+								<div class="vf-banner vf-banner--alert vf-banner--info">
+									<div class="vf-banner__content">
+										<p class="vf-banner__text" [innerHTML]="config.disclaimer"></p>
+										<button role="button" aria-label="close notification banner" class="vf-button vf-button--icon vf-button--dismiss | vf-banner__button" (click)="config?.onDismissDisclaimer?.()">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+												<title>dismiss banner</title>
+												<path d="M14.3,12.179a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.442L12.177,9.7a.25.25,0,0,1-.354,0L2.561.442A1.5,1.5,0,0,0,.439,2.563L9.7,11.825a.25.25,0,0,1,0,.354L.439,21.442a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,0,0,2.122-2.121Z" />
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="vf-chatbot-standalone__input-container">
+							<div class="vf-chatbot-standalone__input-wrapper">
+								<label class="vf-u-sr-only" id="vf-chatbot-standalone-input-label" for="vf-chatbot-standalone-input">Ask me</label>
+								<textarea id="vf-chatbot-standalone-input" data-vf-js-chatbot-standalone-input aria-labelledby="vf-chatbot-standalone-input-label" class="vf-chatbot-standalone__input vf-form__textarea vf-u-padding__left--400" [placeholder]="config?.input_placeholder" rows="1"></textarea>
+								<button class="vf-chatbot-standalone__send-button" aria-label="Send message" data-vf-js-chatbot-standalone-send>
+									<img [src]="config?.icons?.send_button" alt="Send" />
+								</button>
+							</div>
+
+							<div *ngIf="config?.footnote" class="vf-chatbot-standalone__footnote vf-u-margin__top--200" [innerHTML]="config.footnote" data-vf-js-chatbot-standalone-footnote></div>
+						</div>
+
+						<vf-chatbot-dialog
+							[title]="config?.dialogProps?.title"
+							[message]="config?.dialogProps?.message"
+							[cancelLabel]="config?.dialogProps?.cancelLabel"
+							[confirmLabel]="config?.dialogProps?.confirmLabel"
+							(confirm)="onDialogConfirm.emit()"
+							(cancel)="onDialogCancel.emit()"
+						></vf-chatbot-dialog>
+
+						<template id="user-message-template">
+							<vf-chatbot-prompt
+								[type]="'user'"
+								[content]="'Hello!'"
+								[avatar]="{ src: config?.icons?.user_avatar, alt: 'Your avatar', name: 'You' }"
+							></vf-chatbot-prompt>
+						</template>
+
+						<ng-container *ngIf="config?.features?.enable_typing_indicator">
+							<template id="loading-indicator-template">
+								<vf-chatbot-prompt
+									[type]="'assistant'"
+									[isLoading]="true"
+									[avatar]="{ src: config?.icons?.assistant_avatar, alt: config?.title, name: config?.title }"
+								></vf-chatbot-prompt>
+							</template>
+						</ng-container>
+
+						<template id="assistant-message-template">
+							<vf-chatbot-prompt
+								[type]="'assistant'"
+								[content]="'How can I help you?'"
+								[avatar]="{ src: config?.icons?.assistant_avatar, alt: config?.title, name: config?.title }"
+								[allowFeedback]="config?.features?.enable_feedback"
+							></vf-chatbot-prompt>
+							<div class="vf-chatbot-feedback vf-u-margin__top--200" *ngIf="config?.features?.enable_feedback" data-vf-js-chatbot-feedback></div>
+						</template>
+
+						<template id="single-action-prompt-template">
+							<vf-chatbot-action-prompt [action_text]="''" [action_url]="'#'"></vf-chatbot-action-prompt>
+						</template>
+
+						<template id="action-prompts-template">
+							<div class="vf-chatbot-action-prompts vf-u-margin__top--400">
+								<div class="vf-chatbot-action-prompts__list" data-vf-js-action-prompts-list></div>
+							</div>
+						</template>
+
+						<ng-container *ngIf="config?.features?.enable_feedback">
+							<template id="feedback-positive-template">
+								<vf-chatbot-feedback [type]="'positive'" [feedback_options]="config?.feedback_options?.positive"></vf-chatbot-feedback>
+							</template>
+							<template id="feedback-negative-template">
+								<vf-chatbot-feedback [type]="'negative'" [feedback_options]="config?.feedback_options?.negative"></vf-chatbot-feedback>
+							</template>
+						</ng-container>
+					</div>
+				</div>
+			</div>
+		</article>
+	</section>
+
+	<div class="vf-stack vf-stack--custom" style="--vf-stack-margin--custom: .5rem;">
+		<h3>Changelog</h3>
+		<details class="vf-details" id="changelog">
+			<summary class="vf-details--summary">Changelog</summary>
+			<h1>Changelog</h1>
+			<h3>1.0.0-beta.4</h3>
+			<ul>
+				<li>Updated : Standalone variant initialization moved to <code>vf-chatbot</code> component</li>
+				<li>Updated : Added more config options</li>
+				<li>Updated : Changes for chatbot modal variant</li>
+				<li>Fixed: Added code to return feedback comments</li>
+				<li>Added : React support <a href="https://github.com/visual-framework/vf-core/issues/2314">Tracking issue</a></li>
+			</ul>
+			<h3>1.0.0-beta.3</h3>
+			<ul><li>Version bump</li></ul>
+			<h3>1.0.0-beta.2</h3>
+			<ul><li>Updated package.json with correct settings</li></ul>
+			<h3>1.0.0-beta.1</h3>
+			<ul>
+				<li>Initial version</li>
+				<li>Auto-resizing textarea (1-5 rows with scroll)</li>
+				<li>Configurable Q&amp;A data loading with fallback responses</li>
+				<li>Enhanced accessibility</li>
+				<li>Comprehensive event handling system</li>
+			</ul>
+		</details>
+	</div>
+
+	<h3>Assets <span id="assets"></span></h3>
+	<ul>
+		<li><a href="/assets/vf-chatbot-standalone/vf-chatbot-standalone.njk">Nunjucks template</a></li>
+		<li><a href="/assets/vf-chatbot-standalone/vf-chatbot-standalone.config.yml">Config</a></li>
+		<li><a href="/assets/vf-chatbot-standalone/CHANGELOG.md">CHANGELOG.md</a></li>
+		<li><a href="/assets/vf-chatbot-standalone/vf-chatbot-standalone.js">vf-chatbot-standalone.js</a></li>
+		<li><a href="/assets/vf-chatbot-standalone/vf-chatbot-standalone.react.js">vf-chatbot-standalone.react.js</a></li>
+		<li><a href="/assets/vf-chatbot-standalone/vf-chatbot-standalone.scss">vf-chatbot-standalone.scss</a></li>
+	</ul>
+
+	<hr>
+	<br>
+	<p class="vf-text-body vf-text-body--4">File system location: <code>components/vf-chatbot-standalone</code></p>
+</section>

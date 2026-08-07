@@ -1,0 +1,128 @@
+<section class="vf-content component-library-notes | vf-stack vf-stack--400">
+  <section class="vf-intro" id="about">
+    <div></div>
+    <div class="vf-stack">
+      <h1 class="vf-intro__heading vf-intro__heading--has-tag">
+        Chatbot
+        <a href="/guidance/component-types/" class="vf-badge vf-badge--primary vf-badge--phases">container</a>
+      </h1>
+      <p class="vf-lede">
+        <span>The <code>vf-chatbot</code> wrapper lets the app switch between modal and standalone chatbot experiences using the shared Angular subcomponents.</span>
+      </p>
+      <p class="vf-intro__text">
+        <a class="vf-link" href="https://github.com/visual-framework/vf-core/tree/develop/components/vf-chatbot">
+          <img src="https://img.shields.io/badge/github-vf--chatbot-blue" alt="github location">
+        </a>
+      </p>
+    </div>
+  </section>
+  <hr class="vf-divider">
+  <section class="embl-grid">
+    <div class="vf-section-header">
+      <h2 class="vf-section-header__heading" id="usage">Usage</h2>
+    </div>
+    <article class="vf-stack vf-stack--600">
+
+          <h3>Why a chatbot</h3>
+          <p>While bots can be a solution to some business challenges, ensure that it is the right solution before implementing it. Consider the following:</p>
+          <ul>
+            <li>Will it solve a validated user problem?</li>
+            <li>Are there more efficient alternatives?</li>
+            <li>What are the potential cons or drawbacks if a chatbot is added to the process?</li>
+            <li>How will this be maintained and updated in the future?</li>
+          </ul>
+          <h3>Deciding between modal vs. standalone</h3>
+          <p>The <a href="/components/vf-chatbot-standalone">chatbot standalone</a> and chatbot modal are two distinct variants for delivering conversational interfaces. Choose between them based on use case needs and task complexity.</p>
+          <h4>Modal</h4>
+          <ul>
+            <li>For in-context support (e.g. help with current page or workflow)</li>
+            <li>Access point is via a floating action button on the page</li>
+            <li>Supports simple tasks such as getting information</li>
+          </ul>
+          <h4>Standalone</h4>
+          <ul>
+            <li>Suitable for exploratory or focused workflows (e.g. discovering genetic variants)</li>
+            <li>Launched via a link (such as "Talk to our AI chat assistant")</li>
+            <li>Supports more complex tasks that benefit from expanded engagement</li>
+          </ul>
+          <h3>Anatomy</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Element</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Title bar</td>
+                <td>Shows the chatbot name, minimise button and close button. The title bar may include a dropdown for selecting categories.</td>
+              </tr>
+              <tr>
+                <td>Dialogue section</td>
+                <td>Scrollable chat window showing the conversation log.</td>
+              </tr>
+              <tr>
+                <td>Intro message</td>
+                <td>A brief onboarding message explaining the purpose and capabilities of the chatbot. Shows the icon, title and short message.</td>
+              </tr>
+              <tr>
+                <td>Banner</td>
+                <td>Used to show optional disclaimers or alerts (Max. 3 lines of text). For cases that require user consent, use a blur overlay on the background or a pre-access popup instead, as banners may be missed.</td>
+              </tr>
+              <tr>
+                <td>Text input area</td>
+                <td>Open input field for typing and sending queries. Expands up to 5 lines, after which it becomes scrollable.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Flows</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Flow</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Suggested prompts</td>
+                <td>Appear on the initial screen. Provide a quick start to users with clickable queries. They help to provide context on the type of questions the user can ask on the platform. (Max. 60 characters)</td>
+              </tr>
+              <tr>
+                <td>Closing the chat dialogue</td>
+                <td>Clicking on the close icon "X" triggers a confirmation prompt to prevent accidental loss of the chat log.</td>
+              </tr>
+              <tr>
+                <td>Error management</td>
+                <td>If the chatbot is unable to provide a response to the query, display a clear error message and provide an alternative way for them to get their answers.</td>
+              </tr>
+              <tr>
+                <td>Links</td>
+                <td>Displayed in a clear underlined style. They can be shown inline or as a list.</td>
+              </tr>
+              <tr>
+                <td>Source attribution</td>
+                <td>Chips are shown in relevant paragraphs which cite the sources. Links to the sources and more details can be accessed via a "View sources" button.</td>
+              </tr>
+              <tr>
+                <td>Feedback on a query level</td>
+                <td>Users can assess the AI responses with a thumbs up/thumbs down or optional close/open response fields to give more details.</td>
+              </tr>
+              <tr>
+                <td>Category selection</td>
+                <td>A dropdown in the title bar lets users switch focus areas (e.g LLM version or data source). Single or multi-selection variants can be used depending on the use case.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Visual branding elements and content</h3>
+          <p>The Chatbot branding elements follow EMBL brand guidelines but can be updated to suit your use case. For advice on branding updates please contact the EMBL Communications Team.</p>
+          <p>Texts shown in the examples are placeholder content. Please review and update all wording to fit your your project needs and ensure it meets legal, accessibility and organisational requirements.</p>
+          <h3>Accessibility</h3>
+          <p>The component targets WCAG 2.1 AA accessibility standard.</p>
+      <div class="vf-u-padding--400" style="background: linear-gradient(135deg, rgba(59,111,182,.08), rgba(0,0,0,0));">
+        
+      </div>
+    </article>
+  </section>
+</section>

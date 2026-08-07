@@ -8,7 +8,7 @@ describe('VfChatbotStandaloneAngularComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VfChatbotStandaloneAngularComponent]
+      declarations: [VfChatbotStandaloneAngularComponent]
     })
     .compileComponents();
 
