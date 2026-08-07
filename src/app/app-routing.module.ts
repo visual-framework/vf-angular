@@ -6,6 +6,7 @@ import { VfBlockquoteComponent } from './components/vf-blockquote/vf-blockquote.
 import { VfButtonComponent } from './components/vf-button/vf-button.component';
 import { VfHeroComponent } from './components/vf-hero/vf-hero.component';
 import { VfTabsComponent } from './components/vf-tabs/vf-tabs.component';
+import { VfChatbotAngularComponent } from './components/vf-chatbot/vf-chatbot.angular.component';
 import { VfBackToTopComponent } from './components/vf-back-to-top/vf-back-to-top.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'components/vf-button', component: VfButtonComponent },
   { path: 'components/vf-hero', component: VfHeroComponent },
   { path: 'components/vf-tabs', component: VfTabsComponent },
+  { path: 'components/vf-chatbot', component: VfChatbotAngularComponent },
   { path: '**', redirectTo: '' }
 ];
 
