@@ -1,9 +1,15 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
+  "newProjectRoot": "projects",
   "projects": {
-    "vf-angular": {
+    "vf-angular-packages": {
       "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -11,56 +17,90 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/vf-angular",
+            "outputPath": "dist/vf-angular-packages",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.json",
-            "aot": true,
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@visual-framework/vf-font-plex-mono/assets/IBM-Plex-Mono",
+                "output": "./assets/fonts/IBM-Plex-Mono"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@visual-framework/vf-font-plex-sans/assets/IBM-Plex-Sans",
+                "output": "./assets/fonts/IBM-Plex-Sans"
+              }
             ],
             "styles": [
               "src/styles.scss"
             ],
             "scripts": [
+              "src/assets/vf-banner/vf-banner.js",
               "src/assets/vf-tabs/vf-tabs.js"
             ]
           },
           "configurations": {
             "production": {
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "vf-angular:build"
-          },
           "configurations": {
             "production": {
-              "browserTarget": "vf-angular:build:production"
+              "buildTarget": "vf-angular-packages:build:production"
             },
             "development": {
-              "browserTarget": "vf-angular:build:development"
+              "buildTarget": "vf-angular-packages:build:development"
             }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "vf-angular-packages:build:production"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
             "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -72,6 +112,603 @@
           }
         }
       }
+    },
+    "vf-badge.angular": {
+      "projectType": "library",
+      "root": "projects/vf-badge.angular",
+      "sourceRoot": "projects/vf-badge.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packager",
+          "options": {
+            "project": "projects/vf-badge.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-badge.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-badge.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-badge.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-banner.angular": {
+      "projectType": "library",
+      "root": "projects/vf-banner.angular",
+      "sourceRoot": "projects/vf-banner.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-banner.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-banner.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-banner.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-banner.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-hero.angular": {
+      "projectType": "library",
+      "root": "projects/vf-hero.angular",
+      "sourceRoot": "projects/vf-hero.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-hero.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-hero.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-hero.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-hero.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-blockquote.angular": {
+      "projectType": "library",
+      "root": "projects/vf-blockquote.angular",
+      "sourceRoot": "projects/vf-blockquote.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-blockquote.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-blockquote.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-blockquote.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-blockquote.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-button.angular": {
+      "projectType": "library",
+      "root": "projects/vf-button.angular",
+      "sourceRoot": "projects/vf-button.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-button.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-button.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-button.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-button.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-tabs.angular": {
+      "projectType": "library",
+      "root": "projects/vf-tabs.angular",
+      "sourceRoot": "projects/vf-tabs.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-tabs.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-tabs.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-tabs.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-tabs.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-back-to-top.angular": {
+      "projectType": "library",
+      "root": "projects/vf-back-to-top.angular",
+      "sourceRoot": "projects/vf-back-to-top.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-back-to-top.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-back-to-top.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-back-to-top.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-back-to-top.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-chatbot-action-prompt.angular": {
+      "projectType": "library",
+      "root": "projects/vf-chatbot-action-prompt.angular",
+      "sourceRoot": "projects/vf-chatbot-action-prompt.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-chatbot-action-prompt.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-chatbot-action-prompt.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-chatbot-action-prompt.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-chatbot-action-prompt.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-chatbot-selector.angular": {
+      "projectType": "library",
+      "root": "projects/vf-chatbot-selector.angular",
+      "sourceRoot": "projects/vf-chatbot-selector.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-chatbot-selector.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-chatbot-selector.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-chatbot-selector.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-chatbot-selector.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-chatbot-welcome-angular": {
+      "projectType": "library",
+      "root": "projects/vf-chatbot-welcome-angular",
+      "sourceRoot": "projects/vf-chatbot-welcome-angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-chatbot-welcome-angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-chatbot-welcome-angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-chatbot-welcome-angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-chatbot-welcome-angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-chatbot-prompt.angular": {
+      "projectType": "library",
+      "root": "projects/vf-chatbot-prompt.angular",
+      "sourceRoot": "projects/vf-chatbot-prompt.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-chatbot-prompt.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-chatbot-prompt.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-chatbot-prompt.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-chatbot-prompt.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-chatbot-feedback.angular": {
+      "projectType": "library",
+      "root": "projects/vf-chatbot-feedback.angular",
+      "sourceRoot": "projects/vf-chatbot-feedback.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-chatbot-feedback.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-chatbot-feedback.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-chatbot-feedback.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-chatbot-feedback.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-chatbot-dialog.angular": {
+      "projectType": "library",
+      "root": "projects/vf-chatbot-dialog.angular",
+      "sourceRoot": "projects/vf-chatbot-dialog.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-chatbot-dialog.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-chatbot-dialog.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-chatbot-dialog.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-chatbot-dialog.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-chatbot-standalone.angular": {
+      "projectType": "library",
+      "root": "projects/vf-chatbot-standalone.angular",
+      "sourceRoot": "projects/vf-chatbot-standalone.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-chatbot-standalone.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-chatbot-standalone.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-chatbot-standalone.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-chatbot-standalone.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-chatbot-fab.angular": {
+      "projectType": "library",
+      "root": "projects/vf-chatbot-fab.angular",
+      "sourceRoot": "projects/vf-chatbot-fab.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-chatbot-fab.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-chatbot-fab.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-chatbot-fab.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-chatbot-fab.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-chatbot-sources.angular": {
+      "projectType": "library",
+      "root": "projects/vf-chatbot-sources.angular",
+      "sourceRoot": "projects/vf-chatbot-sources.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-chatbot-sources.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-chatbot-sources.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-chatbot-sources.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-chatbot-sources.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-chatbot-modal.angular": {
+      "projectType": "library",
+      "root": "projects/vf-chatbot-modal.angular",
+      "sourceRoot": "projects/vf-chatbot-modal.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-chatbot-modal.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-chatbot-modal.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-chatbot-modal.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-chatbot-modal.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "vf-chatbot.angular": {
+      "projectType": "library",
+      "root": "projects/vf-chatbot.angular",
+      "sourceRoot": "projects/vf-chatbot.angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/vf-chatbot.angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/vf-chatbot.angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/vf-chatbot.angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/vf-chatbot.angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
+  },
+  "cli": {
+    "analytics": "ad354a12-40a4-4da7-a19c-b5f78051cdca"
   }
 }

@@ -22,6 +22,7 @@ import { VfHeroComponent } from './vf-hero/vf-hero.component';
 
 import { VfTabsAngularModule } from '@visual-framework/vf-tabs/vf-tabs.angular';
 import { VfTabsComponent } from './vf-tabs/vf-tabs.component';
+import { VfChatbotAngularModule } from './vf-chatbot/vf-chatbot.angular.module';
 // import other components here
 
 @NgModule({
@@ -44,6 +45,7 @@ import { VfTabsComponent } from './vf-tabs/vf-tabs.component';
     VfButtonAngularModule,
     VfHeroAngularModule,
     VfTabsAngularModule,
+    VfChatbotAngularModule,
   ],
   exports: [
     VfBackToTopComponent,
@@ -60,6 +62,7 @@ import { VfTabsComponent } from './vf-tabs/vf-tabs.component';
     VfButtonAngularModule,
     VfHeroAngularModule,
     VfTabsAngularModule,
+    VfChatbotAngularModule,
   ]
 })
 export class VfComponentsModule { }
