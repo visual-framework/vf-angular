@@ -53,6 +53,8 @@ jobs:
       run: npm install
     - name: Build
       run: npm run build:ghpages
+    - name: Add SPA fallback for GitHub Pages
+      run: cp dist/vf-angular/index.html dist/vf-angular/404.html
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
