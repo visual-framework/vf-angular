@@ -25,7 +25,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/vf-tabs/vf-tabs.js"
+              "node_modules/@visual-framework/vf-banner/vf-banner.js",
+              "node_modules/@visual-framework/vf-tabs/vf-tabs.js"
             ]
           },
           "configurations": {
@@ -37,6 +38,14 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
           }
         },
@@ -73,5 +82,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
