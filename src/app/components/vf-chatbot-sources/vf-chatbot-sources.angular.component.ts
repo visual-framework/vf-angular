@@ -43,3 +43,5 @@ export class VfChatbotSourcesAngularComponent implements AfterViewInit {
   ngAfterViewInit(): void {
   }
 }
+
+export * from './vf-chatbot-sources.angular.module';

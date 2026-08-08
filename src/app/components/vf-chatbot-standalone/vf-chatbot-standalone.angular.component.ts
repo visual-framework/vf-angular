@@ -12,7 +12,6 @@ import {
   Inject,
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { VfChatbotConfig } from '../vf-chatbot/vf-chatbot.angular.component';
 
 @Component({
   selector: 'vf-chatbot-standalone',
@@ -164,7 +163,7 @@ export class VfChatbotStandaloneAngularComponent implements OnInit, AfterViewIni
   `
 })
 export class VfChatbotStandalonePageComponent {
-  public chatbotConfig: VfChatbotConfig = {
+  public chatbotConfig = {
     type: 'standalone',
     title: 'Visual Framework Assistant',
     welcome_logo: true,

@@ -131,18 +131,18 @@ export interface VfChatbotConfig {
               <vf-chatbot-welcome
                 *ngIf="config.features?.enable_welcome"
                 [qaData]="qaData"
-                [welcome_logo]="config.welcome_logo"
-                [welcome_logo_url]="config.icons?.main_logo_url"
-                [welcome_logo_alt]="config.welcome_logo_alt"
-                [welcome_title]="config.title"
-                [welcome_message]="config.welcome_message"
-                [welcome_suggestions_title]="config.welcome_suggestions_title"
-                [enable_welcome_suggestions]="config.features?.enable_welcome_suggestions"
-                [welcome_max_suggestions]="config.welcome_max_suggestions"
-                [qa_data_url]="config.api?.qa_data_url"
-                [enable_qa_data_loading]="config.features?.enable_qa_data_loading"
-                [enable_predefined_qa]="config.features?.enable_predefined_qa"
-                [enable_fallback_responses]="config.features?.enable_fallback_responses"
+                [welcome_logo]="config.welcome_logo ?? false"
+                [welcome_logo_url]="config.icons?.main_logo_url ?? ''"
+                [welcome_logo_alt]="config.welcome_logo_alt ?? 'AI Assistant'"
+                [welcome_title]="config.title ?? ''"
+                [welcome_message]="config.welcome_message ?? ''"
+                [welcome_suggestions_title]="config.welcome_suggestions_title ?? ''"
+                [enable_welcome_suggestions]="config.features?.enable_welcome_suggestions ?? false"
+                [welcome_max_suggestions]="config.welcome_max_suggestions ?? 4"
+                [qa_data_url]="config.api?.qa_data_url ?? ''"
+                [enable_qa_data_loading]="config.features?.enable_qa_data_loading ?? true"
+                [enable_predefined_qa]="config.features?.enable_predefined_qa ?? true"
+                [enable_fallback_responses]="config.features?.enable_fallback_responses ?? true"
               ></vf-chatbot-welcome>
 
               <div
@@ -157,12 +157,12 @@ export interface VfChatbotConfig {
               >
                 <vf-chatbot-prompt
                   *ngFor="let msg of messages"
-                  [type]="msg.type"
+                  [type]="msg.type ?? ''"
                   [avatar]="msg.avatar"
-                  [content]="msg.content"
+                  [content]="msg.content ?? ''"
                   [sources]="sources"
                   [prompts]="prompts"
-                  [allowFeedback]="config.features?.enable_feedback"
+                  [allowFeedback]="config.features?.enable_feedback ?? true"
                 ></vf-chatbot-prompt>
               </div>
 

@@ -68,7 +68,6 @@
     "@visual-framework/vf-utility-classes": "2.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "vf-badge.angular": "^0.0.1",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {

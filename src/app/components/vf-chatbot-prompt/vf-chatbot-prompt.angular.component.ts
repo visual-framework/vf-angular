@@ -79,3 +79,5 @@ export class VfChatbotPromptAngularComponent {
     return classes;
   }
 }
+
+export * from './vf-chatbot-prompt.angular.module';

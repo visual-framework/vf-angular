@@ -101,3 +101,5 @@ export class VfChatbotFeedbackAngularComponent implements AfterViewInit {
     this.submit.emit();
   }
 }
+
+export * from './vf-chatbot-feedback.angular.module';

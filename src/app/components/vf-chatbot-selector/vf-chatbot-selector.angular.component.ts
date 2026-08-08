@@ -172,3 +172,5 @@ export class VfChatbotSelectorAngularComponent implements OnInit {
   
 }
 }
+
+export * from './vf-chatbot-selector.angular.module';

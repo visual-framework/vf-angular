@@ -92,3 +92,5 @@ export class VfChatbotWelcomeAngularComponent implements AfterViewInit {
     }
   }
 }
+
+export * from './vf-chatbot-welcome.angular.module';

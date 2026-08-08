@@ -65,3 +65,5 @@ export class VfChatbotFabAngularComponent implements AfterViewInit {
   ngAfterViewInit(): void {
   }
 }
+
+export * from './vf-chatbot-fab.angular.module';

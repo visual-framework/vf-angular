@@ -74,3 +74,5 @@ export class VfChatbotDialogAngularComponent implements AfterViewInit {
   }
 
 }
+
+export * from './vf-chatbot-dialog.angular.module';
